@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Assistente mobile-first para escolher boardgames por clima da mesa, tempo disponível, jogadores, complexidade e histórico local."
+      content="Catálogo dos boardgames de Gian e Paulo, criado a partir do PDF de maio de 2026."
     />
-    <meta name="theme-color" content="#111827" />
-    <title>Boardgames — Assistente da mesa</title>
+    <title>Boardgames — Gian e Paulo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -21,118 +20,71 @@
     <header class="hero">
       <nav class="topbar" aria-label="Navegação principal">
         <a class="brand" href="#topo" aria-label="Voltar ao topo">🎲 Boardgames</a>
-        <div class="nav-actions">
-          <button id="theme-toggle" class="ghost-button" type="button" aria-pressed="false">🌙 Dark mode</button>
-          <a class="pdf-link" href="Boardgames%20-%20Gian%20e%20Paulo%20-%20mai%202026.pdf">Abrir PDF original</a>
-        </div>
+        <a class="pdf-link" href="Boardgames%20-%20Gian%20e%20Paulo%20-%20mai%202026.pdf">Abrir PDF original</a>
       </nav>
 
       <section id="topo" class="hero-content">
-        <p class="eyebrow">Gian & Paulo · Assistente local</p>
-        <h1>O que vocês querem jogar hoje?</h1>
+        <p class="eyebrow">Gian & Paulo · Maio/2026</p>
+        <h1>Escolha o próximo jogo sem abrir a caixa errada.</h1>
         <p class="hero-copy">
-          Descubra o jogo ideal baseado no clima da mesa, tempo disponível e quantidade de jogadores.
-          O app aprende favoritos, notas e jogados recentes direto no navegador.
+          Um GitHub Pages simples, pesquisável e responsivo com os jogos do acervo,
+          seus tempos de partida, quantidade de jogadores, estilos e sensação na mesa.
         </p>
-        <div class="hero-actions">
-          <a class="primary-cta" href="#assistente">🎲 Me recomenda um jogo</a>
-          <button id="random-hero" class="secondary-cta" type="button">Escolhe um jogo pra gente</button>
-        </div>
         <div class="hero-stats" aria-label="Resumo do catálogo">
           <span><strong id="total-games">52</strong> jogos</span>
           <span><strong id="party-count">—</strong> party games</span>
           <span><strong id="coop-count">—</strong> cooperativos</span>
-          <span><strong id="fast-count">—</strong> rápidos</span>
         </div>
       </section>
     </header>
 
     <main>
-      <section id="assistente" class="assistant-panel" aria-labelledby="assistant-title">
-        <div class="section-heading">
-          <p class="eyebrow">Sistema de recomendação</p>
-          <h2 id="assistant-title">Como está o grupo hoje?</h2>
-          <p>Responda como gente, não como planilha. A lista se ajusta em tempo real.</p>
+      <section class="controls" aria-labelledby="filtros-title">
+        <div>
+          <p class="eyebrow">Filtros</p>
+          <h2 id="filtros-title">Encontre pelo clima da rodada</h2>
         </div>
-
-        <div class="mood-grid" role="group" aria-label="Clima da mesa">
-          <button class="mood-chip" type="button" data-mood="funny">😂 Quer rir</button>
-          <button class="mood-chip" type="button" data-mood="strategic">🧠 Quer pensar</button>
-          <button class="mood-chip" type="button" data-mood="fast">⚡ Quer algo rápido</button>
-          <button class="mood-chip" type="button" data-mood="chaos">🔥 Quer caos</button>
-          <button class="mood-chip" type="button" data-mood="coop">🤝 Quer cooperação</button>
-          <button class="mood-chip" type="button" data-mood="bluff">😈 Quer blefe</button>
-          <button class="mood-chip" type="button" data-mood="easy">🟢 Quer pouca regra</button>
-          <button class="mood-chip" type="button" data-mood="party">🎉 Festa/grupo grande</button>
-        </div>
-
         <div class="control-grid">
           <label>
-            Buscar por nome ou sensação
-            <input id="search" type="search" placeholder="Ex.: blefe, cooperativo, caos..." autocomplete="off" />
+            Buscar
+            <input id="search" type="search" placeholder="Nome, estilo, descrição..." />
           </label>
           <label>
-            Quantas pessoas?
-            <input id="players-filter" type="number" min="1" max="20" inputmode="numeric" placeholder="Ex.: 5" />
-          </label>
-          <label>
-            Tempo disponível
-            <select id="time-filter">
-              <option value="">Qualquer tempo</option>
-              <option value="15">Até 15 min</option>
-              <option value="30">Até 30 min</option>
-              <option value="45">Até 45 min</option>
-              <option value="60">Até 60 min</option>
+            Modo
+            <select id="mode-filter">
+              <option value="">Todos</option>
             </select>
           </label>
           <label>
-            Energia para regras
+            Complexidade
             <select id="complexity-filter">
-              <option value="">Qualquer complexidade</option>
-              <option value="leve">🟢 leve</option>
-              <option value="medio">🟡 médio</option>
-              <option value="pesado">🔴 pesado</option>
+              <option value="">Todas</option>
+            </select>
+          </label>
+          <label>
+            Party game
+            <select id="party-filter">
+              <option value="">Todos</option>
+              <option value="Sim">Sim</option>
+              <option value="Muito">Muito</option>
+              <option value="Parcialmente">Parcialmente</option>
+              <option value="Não">Não</option>
             </select>
           </label>
         </div>
-
-        <div class="quick-actions">
-          <button id="random-game" class="primary-button" type="button">🎲 Escolhe um jogo pra gente</button>
-          <button id="clear-filters" class="ghost-button" type="button">Limpar filtros</button>
-        </div>
-      </section>
-
-      <section id="recommendation" class="recommendation-card" aria-live="polite"></section>
-
-      <section class="shelves" aria-labelledby="shelves-title">
-        <div class="section-heading compact">
-          <p class="eyebrow">Descoberta rápida</p>
-          <h2 id="shelves-title">Atalhos para decidir em segundos</h2>
-        </div>
-        <div id="shelves" class="shelf-grid"></div>
       </section>
 
       <section class="results-header" aria-live="polite">
-        <div>
-          <p class="eyebrow">Catálogo inteligente</p>
-          <h2><span id="result-count">52</span> jogos encontrados</h2>
-        </div>
-        <p id="active-summary" class="active-summary">Mostrando todos os jogos.</p>
+        <h2><span id="result-count">52</span> jogos encontrados</h2>
+        <button id="clear-filters" type="button">Limpar filtros</button>
       </section>
 
       <section id="games" class="games-grid" aria-label="Lista de jogos"></section>
       <p id="empty-state" class="empty-state" hidden>Nenhum jogo encontrado com esses filtros.</p>
     </main>
 
-    <dialog id="game-dialog" class="game-dialog" aria-labelledby="dialog-title">
-      <div class="dialog-card">
-        <button id="dialog-close" class="dialog-close" type="button" aria-label="Fechar detalhes">×</button>
-        <div id="dialog-content"></div>
-      </div>
-    </dialog>
-
     <footer>
-      <p>Conteúdo baseado no arquivo <strong>Boardgames - Gian e Paulo - mai 2026.pdf</strong>. Preferências, notas e histórico ficam apenas neste navegador.</p>
+      <p>Conteúdo baseado no arquivo <strong>Boardgames - Gian e Paulo - mai 2026.pdf</strong>.</p>
     </footer>
 
     <script src="app.js"></script>
