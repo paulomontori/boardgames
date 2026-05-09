@@ -490,7 +490,7 @@ const games = [
     "bluff": "Não",
     "party": "Não",
     "complexity": "Média",
-    "how": "Você pega puzzles e preenche seus espaços com peças geométricas parecidas com Tetris. Ao completar um puzzle, ganha pontos e, muitas vezes, peças melhores para resolver desafios maiores. A partida é uma corrida para construir uma “máquina” eficiente: pegar peças, completar puzzles e transformar recompensas em novas oportunidades.",
+    "how": "Você pega quebra-cabeças e preenche seus espaços com peças geométricas parecidas com Tetris. Ao completar um quebra-cabeças, ganha pontos e, muitas vezes, peças melhores para resolver desafios maiores. A partida é uma corrida para construir uma “máquina” eficiente: pegar peças, completar puzzles e transformar recompensas em novas oportunidades.",
     "feeling": "Muito satisfatório visualmente, com sensação clara de evolução a cada peça nova.",
     "strength": "É elegante, bonito e oferece decisões estratégicas sem regras complicadas."
   },
