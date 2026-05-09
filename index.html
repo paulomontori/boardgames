@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Catálogo dos boardgames de Gian e Paulo, criado a partir do PDF de maio de 2026."
+    />
+    <title>Boardgames — Gian e Paulo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Navegação principal">
+        <a class="brand" href="#topo" aria-label="Voltar ao topo">🎲 Boardgames</a>
+        <a class="pdf-link" href="Boardgames%20-%20Gian%20e%20Paulo%20-%20mai%202026.pdf">Abrir PDF original</a>
+      </nav>
+
+      <section id="topo" class="hero-content">
+        <p class="eyebrow">Gian & Paulo · Maio/2026</p>
+        <h1>Escolha o próximo jogo sem abrir a caixa errada.</h1>
+        <p class="hero-copy">
+          Um GitHub Pages simples, pesquisável e responsivo com os jogos do acervo,
+          seus tempos de partida, quantidade de jogadores, estilos e sensação na mesa.
+        </p>
+        <div class="hero-stats" aria-label="Resumo do catálogo">
+          <span><strong id="total-games">52</strong> jogos</span>
+          <span><strong id="party-count">—</strong> party games</span>
+          <span><strong id="coop-count">—</strong> cooperativos</span>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="controls" aria-labelledby="filtros-title">
+        <div>
+          <p class="eyebrow">Filtros</p>
+          <h2 id="filtros-title">Encontre pelo clima da rodada</h2>
+        </div>
+        <div class="control-grid">
+          <label>
+            Buscar
+            <input id="search" type="search" placeholder="Nome, estilo, descrição..." />
+          </label>
+          <label>
+            Modo
+            <select id="mode-filter">
+              <option value="">Todos</option>
+            </select>
+          </label>
+          <label>
+            Complexidade
+            <select id="complexity-filter">
+              <option value="">Todas</option>
+            </select>
+          </label>
+          <label>
+            Party game
+            <select id="party-filter">
+              <option value="">Todos</option>
+              <option value="Sim">Sim</option>
+              <option value="Muito">Muito</option>
+              <option value="Parcialmente">Parcialmente</option>
+              <option value="Não">Não</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="results-header" aria-live="polite">
+        <h2><span id="result-count">52</span> jogos encontrados</h2>
+        <button id="clear-filters" type="button">Limpar filtros</button>
+      </section>
+
+      <section id="games" class="games-grid" aria-label="Lista de jogos"></section>
+      <p id="empty-state" class="empty-state" hidden>Nenhum jogo encontrado com esses filtros.</p>
+    </main>
+
+    <footer>
+      <p>Conteúdo baseado no arquivo <strong>Boardgames - Gian e Paulo - mai 2026.pdf</strong>.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
