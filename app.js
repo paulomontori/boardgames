@@ -10,9 +10,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Cada jogador recebe letras aleatórias e tenta montar palavras cruzadas o mais rápido possível. Não existem turnos. Todo mundo joga simultaneamente. Quando alguém usa todas as letras: todos compram novas letras. Vence quem terminar primeiro.",
-    "feeling": "Caos mental de caça-palavras em tempo real.",
-    "strength": "Muito rápido e acessível."
+    "how": "Cada pessoa recebe letras e monta, ao mesmo tempo, uma grade de palavras cruzadas própria. Quando alguém usa todas as suas letras, todos compram mais uma letra e precisam reorganizar a grade se necessário. A partida termina quando não há letras suficientes para todos comprarem; vence quem ficar sem letras primeiro e tiver apenas palavras válidas.",
+    "feeling": "Corrida de palavras rápida, silenciosamente caótica e cheia de rearranjos de última hora.",
+    "strength": "Explica em poucos segundos e funciona muito bem para partidas curtas ou aquecimento."
   },
   {
     "title": "Balde de Caranguejo",
@@ -25,9 +25,9 @@ const games = [
     "bluff": "Leve",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores tentam alcançar objetivos enquanto os outros fazem de tudo para puxá-los “de volta para o balde”, atrapalhando seus planos. Durante a partida: •cartas criam sabotagens •jogadores roubam vantagens •efeitos inesperados mudam a rodada •alianças momentâneas podem surgir",
-    "feeling": "Caótico, competitivo e cheio de traições engraçadas.",
-    "strength": "Muita interação e momentos absurdos entre amigos."
+    "how": "Cada jogador tenta avançar nos próprios objetivos, mas a graça está em puxar os outros de volta para o “balde”. As cartas permitem atrapalhar planos, roubar vantagens, criar efeitos inesperados e fazer alianças temporárias. Você precisa escolher quando se proteger, quando atacar e quando deixar outra pessoa virar alvo do grupo.",
+    "feeling": "Competitivo, bagunçado e cheio de vinganças engraçadas entre amigos.",
+    "strength": "Gera interação o tempo todo e transforma pequenas sabotagens em histórias divertidas."
   },
   {
     "title": "Bandido",
@@ -40,9 +40,9 @@ const games = [
     "bluff": "Não",
     "party": "Não muito",
     "complexity": "Fácil",
-    "how": "Um bandido está tentando escapar da prisão por vários túneis. Os jogadores colocam cartas de túneis tentando: •bloquear caminhos •fechar saídas •impedir a fuga O grupo vence se conseguir fechar todas as rotas antes das cartas acabarem.",
-    "feeling": "Puzzle cooperativo rápido e inteligente.",
-    "strength": "Muito simples de aprender e ótimo para partidas rápidas."
+    "how": "Um prisioneiro está fugindo por túneis que se espalham a partir da carta inicial. Em cada turno, o grupo coloca cartas para fechar caminhos, desviar túneis ou reduzir as saídas abertas. Todos vencem se conseguirem bloquear todas as rotas de fuga antes que o baralho acabe.",
+    "feeling": "Quebra-cabeça cooperativo pequeno, direto e cada vez mais apertado.",
+    "strength": "É simples de ensinar, ocupa pouco espaço e cria decisões interessantes rapidamente."
   },
   {
     "title": "Bandida",
@@ -55,9 +55,9 @@ const games = [
     "bluff": "Não",
     "party": "Não muito",
     "complexity": "Fácil",
-    "how": "Funciona de forma parecida com Bandido, mas agora a fugitiva cria situações mais imprevisíveis. Os jogadores precisam fechar túneis e impedir a fuga usando cartas estrategicamente. O jogo possui diferentes modos e caminhos alternativos, deixando as partidas mais variadas e difíceis.",
-    "feeling": "Puzzle cooperativo leve e estratégico.",
-    "strength": "Mais variedade e possibilidades que Bandido."
+    "how": "A ideia central é parecida com Bandido: o grupo precisa controlar uma rede de túneis antes que a fugitiva escape. A diferença é que há cartas e modos que criam efeitos mais variados, como caminhos especiais e decisões sobre como lidar com a fuga. O grupo precisa conversar bem para fechar as saídas certas na hora certa.",
+    "feeling": "Puzzle cooperativo leve, mas com mais surpresa e variedade.",
+    "strength": "Mantém a facilidade do original e acrescenta formas diferentes de jogar."
   },
   {
     "title": "Boggle Slam!",
@@ -70,9 +70,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores alteram palavras na mesa trocando apenas uma letra por vez para formar novas palavras válidas. Exemplo: •GATO •troca uma letra →PATO •depois →PATO →PICO etc. Tudo acontece em tempo real, então velocidade e raciocínio rápido são essenciais.",
-    "feeling": "Muito acelerado e caótico.",
-    "strength": "Partidas rápidas e extremamente fáceis de ensinar."
+    "how": "Uma palavra de quatro letras fica no centro da mesa. Todos jogam ao mesmo tempo, trocando uma letra por vez para formar uma nova palavra válida. O objetivo é ficar sem cartas antes dos outros, então é preciso enxergar mudanças rápidas e agir antes que alguém use a palavra que você pensou.",
+    "feeling": "Disputa acelerada de vocabulário, reflexo e raciocínio rápido.",
+    "strength": "Partidas curtas, regras muito diretas e bastante energia na mesa."
   },
   {
     "title": "Código Secreto: Imagens",
@@ -85,9 +85,9 @@ const games = [
     "bluff": "Não, mas existe informação secreta",
     "party": "Sim",
     "complexity": "Fácil/Média",
-    "how": "Duas equipes competem para encontrar seus agentes secretos escondidos entre várias imagens na mesa. Os “espiões mestres” sabem quais imagens pertencem ao time e dão dicas usando uma palavrae um número. Exemplo:“Frio 2” A equipe tenta descobrir quais 2 imagens estão relacionadas à dica. Existem imagens do time rival, civis inocentes e o assassino. Se alguém escolher o assassino, perde instantaneamente.",
-    "feeling": "Muito criativo e cheio de conexões mentais inesperadas.",
-    "strength": "Excelente mistura de criatividade, dedução e trabalho em equipe."
+    "how": "Duas equipes observam várias imagens na mesa, mas só os chefes de equipe sabem quais imagens pertencem a cada time. Em cada rodada, o chefe dá uma dica com uma palavra e um número, como “frio, 2”, para indicar quantas imagens estão ligadas à dica. A equipe tenta acertar suas imagens sem escolher cartas neutras, do adversário ou o assassino, que causa derrota imediata.",
+    "feeling": "Criativo e cheio de conexões inesperadas entre imagens aparentemente sem relação.",
+    "strength": "Combina comunicação, dedução e trabalho em equipe de um jeito muito acessível."
   },
   {
     "title": "Cores com Dicas",
@@ -100,9 +100,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores precisam associar dicas a tons específicos de cores em uma cartela. Um jogador dá uma dica comopor exemplo: “céu”; “lava”; “limão” Os outros tentam adivinhar exatamente qual tom de cor ele quis indicar. Quanto mais próximo do tom correto, mais pontos ganha.",
-    "feeling": "Leve, criativo e cheio de interpretações diferentes.",
-    "strength": "Muito divertido perceber como cada pessoa enxerga cores de forma diferente."
+    "how": "Um jogador escolhe secretamente um tom em uma cartela cheia de cores e dá uma dica curta, como “céu”, “limão” ou “ferrugem”. Os outros marcam qual tom acham que combina com a dica. Quanto mais perto chegarem da cor escolhida, mais pontos fazem; quem deu a dica também pontua quando o grupo entende bem a associação.",
+    "feeling": "Leve, criativo e cheio de discussões sobre como cada pessoa imagina uma cor.",
+    "strength": "Funciona muito bem com grupos grandes porque todo mundo participa ao mesmo tempo."
   },
   {
     "title": "Coup",
@@ -115,9 +115,9 @@ const games = [
     "bluff": "Sim",
     "party": "Sim",
     "complexity": "Média",
-    "how": "Você pode mentir sobre seus poderes. Os outros podem: •acreditar •desafiar •bloquear",
-    "feeling": "Blefe psicológico intenso.",
-    "strength": "Altíssima tensão em jogo pequeno."
+    "how": "Cada jogador tem personagens secretos que dão poderes, mas você pode fingir ter qualquer personagem para usar suas ações. Os outros precisam decidir se acreditam, bloqueiam ou desafiam seu blefe. Quem é desafiado e estava mentindo perde influência; quem perde todas as influências sai da rodada. Vence o último sobrevivente.",
+    "feeling": "Blefe psicológico curto, tenso e cheio de acusações.",
+    "strength": "Poucas cartas criam muita leitura social e decisões arriscadas."
   },
   {
     "title": "Dany",
@@ -130,9 +130,9 @@ const games = [
     "bluff": "Sim",
     "party": "Sim",
     "complexity": "Fácil/Média",
-    "how": "Um jogador assume o papel de Dany e conhece a resposta secreta, mas tenta impedir que os outros a descubram facilmente. Os demais jogadores fazem perguntas e recebem pistas limitadas e ambíguas, precisando conectar ideias e interpretar cuidadosamente as respostas para chegar à solução correta.",
-    "feeling": "Mistura de mistério leve com momentos engraçados de confusão coletiva.",
-    "strength": "Muito social e ótimo para grupos que gostam de dedução leve."
+    "how": "Os jogadores precisam interpretar pistas visuais para descobrir ideias, palavras ou conceitos. Um dos participantes pode estar tentando confundir o grupo sem se revelar, então cada resposta precisa ser analisada com cuidado. A partida mistura criatividade, comunicação limitada e dedução sobre quem está ajudando de verdade.",
+    "feeling": "Mistério social leve, com confusão divertida e interpretações bem diferentes.",
+    "strength": "Ótimo para grupos que gostam de conversar, suspeitar e rir das pistas estranhas."
   },
   {
     "title": "Decisões de Merda",
@@ -145,9 +145,9 @@ const games = [
     "bluff": "Não",
     "party": "Muito",
     "complexity": "Fácil",
-    "how": "Os jogadores escolhem entre situações horríveis e engraçadas. O objetivo é prever respostas ou gerar discussão.",
-    "feeling": "Humor pesado e constrangedor.",
-    "strength": "Muito engraçado em grupos íntimos."
+    "how": "A cada rodada, os jogadores encaram situações absurdas, desconfortáveis ou moralmente péssimas e precisam escolher uma resposta. O jogo funciona mais pela conversa do que pela estratégia: as escolhas revelam preferências, geram debates e rendem piadas internas. Ganha quem melhor prever o grupo ou se destacar nas decisões, dependendo da carta usada.",
+    "feeling": "Humor adulto, constrangedor e feito para grupos que já têm intimidade.",
+    "strength": "Cria discussões engraçadas rapidamente e não exige experiência com jogos."
   },
   {
     "title": "Dixit",
@@ -156,13 +156,13 @@ const games = [
     "time": "30 min",
     "age": "",
     "style": "Criatividade / interpretação",
-    "mode": "Competitivoleve",
+    "mode": "Competitivo leve",
     "bluff": "Não exatamente",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "O narrador dá uma dica para sua carta ilustrada. Os outros colocam cartas parecidas para confundir. Depois todos tentam descobrir a carta original.",
-    "feeling": "Muito subjetivo e criativo.",
-    "strength": "As artes e interpretações."
+    "how": "Em cada rodada, o narrador escolhe uma carta ilustrada da mão e dá uma dica aberta: pode ser uma frase, palavra, som ou referência. Os outros jogam cartas que combinem com a dica para tentar confundir a votação. Depois todos tentam descobrir qual era a carta original do narrador; a melhor dica é aquela que alguns acertam, mas não todo mundo.",
+    "feeling": "Poético, subjetivo e cheio de interpretações inesperadas.",
+    "strength": "As ilustrações puxam criatividade até de quem não costuma jogar muito."
   },
   {
     "title": "Exploding Kittens",
@@ -175,9 +175,9 @@ const games = [
     "bluff": "Leve",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores puxam cartas tentando não explodir. Cartas especiais: •evitam explosões •roubam cartas •pulam turnos",
-    "feeling": "Caos leve e engraçado.",
-    "strength": "Extremamente acessível."
+    "how": "No seu turno, você usa cartas de ação se quiser e depois compra uma carta do baralho. Se comprar um Exploding Kitten e não tiver como desarmar, você é eliminado. As cartas permitem espiar o topo, pular turnos, embaralhar, atacar jogadores e roubar cartas, criando uma disputa para sobreviver até o fim.",
+    "feeling": "Caos leve, engraçado e com tensão a cada compra de carta.",
+    "strength": "É extremamente acessível e costuma funcionar mesmo com jogadores iniciantes."
   },
   {
     "title": "F.D.P.",
@@ -190,9 +190,9 @@ const games = [
     "bluff": "Não",
     "party": "Muito",
     "complexity": "Fácil",
-    "how": "Um jogador lê uma frase incompleta ou pergunta, e os outros escolhem cartas com respostas absurdas, ofensivas ou engraçadas para completar. O jogador da rodada escolhe a resposta mais divertida, e quem venceu ganha pontos. O foco do jogo é: •humor pesado •criatividade •zoeira entre amigos",
-    "feeling": "Caótico, politicamente incorreto e muito engraçado com o grupo certo.",
-    "strength": "Excelente para grupos que gostam de humor sem filtro."
+    "how": "Um jogador lê uma pergunta ou frase incompleta. Os demais escolhem, em segredo, a carta de resposta mais absurda, ofensiva ou engraçada que tiverem na mão. O leitor embaralha as respostas, lê todas em voz alta e escolhe a favorita; quem enviou a carta escolhida marca ponto.",
+    "feeling": "Zoeira pesada, politicamente incorreta e dependente do senso de humor do grupo.",
+    "strength": "É fácil de começar e rende muitas risadas com pessoas que gostam de humor sem filtro."
   },
   {
     "title": "Hanabi",
@@ -205,9 +205,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Média",
-    "how": "Você vê as cartas dos outros…mas não as suas. O grupo precisa montar fogos de artifício corretamente usando dicas limitadas.",
-    "feeling": "Comunicação indireta extremamente inteligente.",
-    "strength": "Muito original."
+    "how": "O grupo precisa montar fogos de artifício em ordem crescente por cor, mas cada jogador segura as próprias cartas viradas para fora: todos veem suas cartas, menos você. Em vez de falar livremente, os jogadores dão dicas limitadas sobre cores ou números. A graça é deduzir quais cartas jogar, guardar ou descartar com base nessas pistas.",
+    "feeling": "Comunicação indireta inteligente, silenciosa e cheia de pequenas revelações.",
+    "strength": "A inversão de ver a mão dos outros, mas não a sua, torna o jogo muito original."
   },
   {
     "title": "Hitster",
@@ -220,9 +220,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Você escaneia músicas no Spotify e tenta colocá-las na ordem cronológica correta.",
-    "feeling": "Mistura nostalgia e memória musical.",
-    "strength": "Perfeito para festas."
+    "how": "Uma música é tocada pelo aplicativo, e o jogador precisa colocá-la na posição correta da sua linha do tempo, antes ou depois das músicas que já acertou. Não é necessário saber o ano exato; basta comparar épocas, estilos e memórias musicais. Quem montar primeiro uma sequência suficiente de músicas vence.",
+    "feeling": "Nostalgia musical, cantoria espontânea e palpites confiantes que dão errado.",
+    "strength": "Perfeito para festas porque vira conversa sobre músicas e lembranças."
   },
   {
     "title": "ITO",
@@ -235,9 +235,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Cada jogador recebe secretamente um número. O grupo recebe um tema, comopor exemplo:“coisas assustadoras”; “comidas gostosas”; “personagens fortes” Cada pessoa dá uma dica relacionada ao seu número sem revelá-lo diretamente. Depois, o grupo tenta organizar todos os números na ordem correta baseado apenas nas dicas dadas.",
-    "feeling": "Muito engraçado e cheio de interpretações inesperadas.",
-    "strength": "Excelente para gerar conversa e descobrir como cada pessoa pensa."
+    "how": "Cada jogador recebe um número secreto dentro de uma escala. O grupo também recebe um tema, como “coisas assustadoras” ou “comidas gostosas”. Cada pessoa dá uma pista que represente a intensidade do seu número sem revelá-lo; depois todos tentam colocar as pistas em ordem, do menor para o maior, antes de revelar os números.",
+    "feeling": "Engraçado e revelador, porque cada pessoa mede as coisas de um jeito diferente.",
+    "strength": "Gera conversa naturalmente e é muito fácil adaptar ao humor do grupo."
   },
   {
     "title": "Jenga",
@@ -250,9 +250,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores removem blocos da torre um por vez e os colocam no topo sem derrubar a estrutura. A cada rodada:a torre fica mais alta, instável e difícil de manipular. Perde quem derrubar a torre.",
-    "feeling": "Tensão crescente e muitos momentos engraçados.",
-    "strength": "Extremamente simples, acessível e ótimo para qualquer grupo."
+    "how": "Os jogadores retiram um bloco por vez de qualquer andar permitido da torre e colocam esse bloco no topo. A estrutura fica mais alta, torta e instável a cada jogada. O objetivo é completar seu turno sem derrubar a torre; quem causa a queda perde.",
+    "feeling": "Tensão crescente, mãos tremendo e comemoração quando uma jogada impossível funciona.",
+    "strength": "Quase não precisa de explicação e diverte pessoas de qualquer nível de experiência."
   },
   {
     "title": "Kariba",
@@ -265,9 +265,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil",
-    "how": "Os jogadores baixam cartas de animais ao redor de um lago tentando expulsar animais mais fracos. Cada animal possui uma posição na cadeia alimentar: animais fortes espantam os menores, mas podem ser expulsos por outros depois. O objetivo é acumular mais pontos ao final da partida.",
-    "feeling": "Leve, rápido e estratégico.",
-    "strength": "Muito simples de aprender e ótimo para partidas rápidas."
+    "how": "Os animais se reúnem ao redor de um lago, e cada jogador baixa cartas para formar grupos de uma espécie. Quando há animais suficientes, eles espantam espécies mais fracas e geram pontos para quem provocou a fuga. Como animais maiores também podem ser pressionados depois, é preciso escolher o momento certo de jogar cada conjunto.",
+    "feeling": "Rápido, leve e com pequenas viradas estratégicas.",
+    "strength": "Regras simples, boa interação e partidas que pedem revanche."
   },
   {
     "title": "Kingdomino",
@@ -280,9 +280,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil",
-    "how": "Os jogadores constroem um reino usando peças estilo dominó com diferentes tipos de terrenos: As peças precisam se conectar corretamente para formar áreas maiores e multiplicar pontos com coroas. A escolha das peças também define a ordem da próxima rodada, criando decisões entrepegar peças fortesou jogar antes",
-    "feeling": "Leve, rápido e muito satisfatório.",
-    "strength": "Excelente jogo de entrada para estratégia moderna."
+    "how": "Cada jogador constrói um reino usando peças parecidas com dominós, sempre conectando ao menos um terreno igual ao que já existe no seu tabuleiro. Áreas grandes valem mais quando têm coroas, então você tenta equilibrar tamanho e multiplicadores. A escolha de uma peça forte pode fazer você jogar mais tarde na rodada seguinte, criando uma decisão simples e importante.",
+    "feeling": "Construção rápida, visualmente satisfatória e com escolhas leves, mas relevantes.",
+    "strength": "É um excelente jogo de entrada para quem quer experimentar estratégia moderna."
   },
   {
     "title": "Love Letter",
@@ -295,9 +295,9 @@ const games = [
     "bluff": "Sim, leve",
     "party": "Parcialmente",
     "complexity": "Fácil",
-    "how": "Você joga cartas tentando terminar a rodada com o personagem mais valioso. Cada carta possui poderes simples,mas estratégicos.",
-    "feeling": "Leitura social constante.",
-    "strength": "Poucas cartas, muita profundidade."
+    "how": "Em cada turno, você compra uma carta, fica com duas na mão e joga uma delas para usar seu efeito. As cartas permitem adivinhar a mão dos outros, proteger-se, comparar valores ou eliminar jogadores. A rodada termina quando só resta uma pessoa ou quando o baralho acaba; vence quem terminar com a carta mais alta ou sobreviver.",
+    "feeling": "Dedução rápida com blefes pequenos e muita leitura das escolhas dos outros.",
+    "strength": "Usa pouquíssimas cartas, mas cada turno parece uma decisão importante."
   },
   {
     "title": "Magic Maze",
@@ -310,9 +310,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Média",
-    "how": "Cada jogador controla apenas certos movimentos dos personagens. O grupo precisa coordenar tudo rapidamente sem poder conversar direito.",
-    "feeling": "Desespero coletivo.",
-    "strength": "Muito diferente da maioria dos cooperativos."
+    "how": "O grupo controla aventureiros dentro de um shopping mágico, mas cada jogador só pode executar alguns tipos de movimento ou ação. Quase não é permitido conversar, e tudo acontece contra o relógio. Vocês precisam explorar o mapa, pegar equipamentos e escapar antes que o tempo acabe, coordenando ações sem explicar demais.",
+    "feeling": "Desespero coletivo, olhares intensos e vontade de gritar instruções que não pode dar.",
+    "strength": "É um cooperativo muito diferente, acelerado e memorável."
   },
   {
     "title": "Misty",
@@ -325,9 +325,9 @@ const games = [
     "bluff": "Não",
     "party": "Não muito",
     "complexity": "Fácil",
-    "how": "Os jogadores coletam cartas e montam combinações para fazer pontos, enquanto tentam controlar riscos e aproveitar bônus. As decisões envolvem: •quais cartas pegar •quando pontuar •como bloquear adversários",
-    "feeling": "Calmo, leve e estratégico.",
-    "strength": "Partidas rápidas com boas decisões táticas."
+    "how": "Os jogadores montam uma pequena janela de cartas, escolhendo quais figuras colocar e onde posicioná-las. Algumas cartas pontuam diretamente, outras se movem ou interagem com cartas vizinhas no fim da rodada. A decisão principal é criar uma composição que renda pontos sem deixar efeitos ruins atrapalharem sua própria janela.",
+    "feeling": "Calmo, bonito e estratégico na medida certa.",
+    "strength": "Partidas curtas com escolhas táticas claras e fáceis de visualizar."
   },
   {
     "title": "Munchkin",
@@ -340,9 +340,9 @@ const games = [
     "bluff": "Sim, bastante negociação e traição",
     "party": "Parcialmente",
     "complexity": "Média",
-    "how": "Os jogadores enfrentam monstros, ganham equipamentos e sobem de nível tentando chegar ao nível 10 primeiro. Durante a partida, os outros podem ajudar, atrapalhar, fortalecer monstros ou trair você no momento mais importante.",
-    "feeling": "Caótico, engraçado e cheio de “amizades destruídas”.",
-    "strength": "Humor absurdo e muita interação entre jogadores."
+    "how": "Cada jogador explora masmorras, enfrenta monstros, ganha equipamentos e tenta subir até o nível 10. Quando alguém luta contra um monstro, os outros podem ajudar em troca de recompensa ou atrapalhar jogando cartas que deixam a luta pior. A partida vira uma negociação constante, principalmente quando alguém está perto de vencer.",
+    "feeling": "Caótico, engraçado e cheio de traições “só dessa vez”.",
+    "strength": "O humor de RPG e a interação direta criam momentos muito marcantes."
   },
   {
     "title": "Mysterium",
@@ -355,9 +355,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Média",
-    "how": "Um fantasma dá pistasaos jogadores (médiuns)usando cartas abstratas. Os médiuns precisam interpretar: •assassino •local •objeto usado no assassinato",
-    "feeling": "Interpretar sonhos estranhose lúdicos.",
-    "strength": "Atmosfera incrível."
+    "how": "Um jogador é o fantasma e não pode falar livremente. Ele entrega cartas com imagens abstratas para os médiuns tentarem descobrir suspeito, local e objeto ligados a um crime. Os médiuns discutem as interpretações, avançam quando acertam e, no final, precisam identificar juntos a solução verdadeira.",
+    "feeling": "Investigação onírica, como tentar interpretar sonhos estranhos em grupo.",
+    "strength": "A atmosfera e as cartas surrealistas tornam a experiência muito imersiva."
   },
   {
     "title": "Nem a Pato",
@@ -370,9 +370,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores baixam cartas tentando cumprir objetivos e atrapalhar os adversários usando efeitos especiais e combinações. O jogo gira em torno de timing, gerenciamento de mão e pequenas sabotagens entre os jogadores.",
-    "feeling": "Leve, rápido e caótico.",
-    "strength": "Partidas rápidas e muita interação entre jogadores."
+    "how": "Os jogadores baixam cartas para cumprir objetivos, aproveitar combinações e atrapalhar os adversários com efeitos especiais. A mão muda rápido, então é importante escolher se você pontua agora, prepara uma jogada melhor ou impede alguém que está perto de completar uma condição. O clima é leve, com pequenas sabotagens constantes.",
+    "feeling": "Rápido, brincalhão e um pouco caótico.",
+    "strength": "Tem bastante interação sem ficar pesado ou difícil de acompanhar."
   },
   {
     "title": "Nova Luna",
@@ -385,9 +385,9 @@ const games = [
     "bluff": "Não",
     "party": "Não",
     "complexity": "Média",
-    "how": "Os jogadores escolhem peçasda “roda da lua” para completar objetivos pessoais. Cada peça possui tarefas relacionadas a:cores; posicionamento; conexões entre peças Ao cumprir objetivos, você gastamarcadores.Quem gastartodos primeiro vence. A ordem dos turnos muda conforme as peças escolhidas, criando decisões entre jogar antes ou pegar peças mais vantajosas para futuros combos.",
-    "feeling": "Calmo, estratégico e muito viciante.",
-    "strength": "Puzzle elegante com profundidade surpreendente."
+    "how": "Você escolhe peças coloridas de uma roda comum e as encaixa no seu tabuleiro para cumprir objetivos impressos nas próprias peças. Esses objetivos pedem cores específicas ao redor ou conexões entre peças. Ao cumprir um objetivo, você coloca um marcador; quem colocar todos os marcadores primeiro vence. Peças melhores podem custar mais tempo e fazer você demorar a jogar de novo.",
+    "feeling": "Puzzle calmo, estratégico e muito satisfatório quando os encaixes funcionam.",
+    "strength": "Oferece profundidade sem depender de conflito direto entre jogadores."
   },
   {
     "title": "Odin",
@@ -400,9 +400,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil",
-    "how": "Os jogadores tentam se livrar de todas as cartas da mão jogando combinações maiores que as da mesa. As cartas possuem cores e valores, e algumas combinações permitem jogadas especiais ou mudam o ritmo da rodada. Vence quem conseguir terminar a mão primeiro e evitar penalidades.",
-    "feeling": "Rápido, estratégico e com clima de “UNO mais inteligente”.",
-    "strength": "Fácil de aprender, mas com boas decisões táticas."
+    "how": "O objetivo é se livrar das cartas da mão jogando combinações mais fortes do que a combinação atual da mesa. Você pode jogar cartas de mesmo valor ou de mesma cor, e precisa avaliar quando gastar cartas altas ou guardar opções para depois. Quem termina a mão primeiro encerra a rodada e os outros pontuam negativamente pelas cartas restantes.",
+    "feeling": "Ágil, esperto e com clima de jogo de descarte mais estratégico.",
+    "strength": "É fácil de aprender, mas recompensa timing e leitura da mesa."
   },
   {
     "title": "Pandemic",
@@ -415,9 +415,9 @@ const games = [
     "bluff": "Não",
     "party": "Não",
     "complexity": "Média",
-    "how": "O grupo tenta impedir doenças globais. Vocês: •tratam infecções •viajam pelo mapa •trocam cartas •pesquisam curas Enquanto isso o jogo espalha novas doenças constantemente. Se houver surtos demais:todos perdem.",
-    "feeling": "Urgência constante.",
-    "strength": "Um dos cooperativos mais clássicos."
+    "how": "O grupo é uma equipe de especialistas tentando conter quatro doenças pelo mundo. Em seus turnos, vocês viajam pelo mapa, tratam infecções, constroem estações, trocam cartas e pesquisam curas. Depois de cada turno, o próprio jogo espalha novas doenças e pode causar surtos em cadeia. Todos vencem ao descobrir as quatro curas antes que alguma condição de derrota aconteça.",
+    "feeling": "Urgência constante, planejamento em equipe e sensação de crise global.",
+    "strength": "É um dos cooperativos modernos mais clássicos e ensina bem trabalho em equipe."
   },
   {
     "title": "Parade",
@@ -430,9 +430,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil/Média",
-    "how": "Os jogadores jogam cartas em uma fila (“parada”) tentando evitar pegar cartas negativas. Dependendo do valor e posição da carta jogada, você pode acabar coletando cartas da mesa, e elas viram pontos negativos no final. O objetivo é terminar com a menor pontuação possível.",
-    "feeling": "Leve, estratégico e com decisões simples,mas inteligentes.",
-    "strength": "Muito elegante e fácil de ensinar."
+    "how": "Os jogadores colocam cartas em uma fila de desfile e tentam evitar pegar cartas que virarão pontos negativos. O valor da carta jogada define quantas cartas ficam protegidas no início da fila e quais podem ser coletadas. Como no final a menor pontuação vence, cada jogada envolve decidir o que é menos ruim pegar agora ou deixar para os outros.",
+    "feeling": "Leve, elegante e cheio de decisões simples que doem um pouco.",
+    "strength": "É fácil de ensinar e tem uma pontuação esperta que muda suas prioridades."
   },
   {
     "title": "Perfil Express: Filmes e Séries",
@@ -445,9 +445,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores tentam adivinhar filmes e séries usando dicas reveladas aos poucos. As primeiras pistas costumam ser vagas, e conforme novas dicas aparecem fica mais fácil descobrir a resposta. Quem adivinhar mais cedo ganha mais pontos.",
-    "feeling": "Mistura de quiz com memória de cultura pop.",
-    "strength": "Muito divertido para quem gosta de filmes e séries."
+    "how": "Uma carta traz a resposta de um filme ou série e várias dicas numeradas. Os jogadores vão pedindo pistas aos poucos e podem tentar adivinhar a qualquer momento. Quanto mais cedo alguém acerta, mais pontos ganha, mas chutar cedo demais pode entregar informação para os outros.",
+    "feeling": "Quiz leve de cultura pop, memória afetiva e palpites em voz alta.",
+    "strength": "Funciona muito bem com quem gosta de filmes e séries, mesmo sem ser jogador frequente."
   },
   {
     "title": "Piratas!",
@@ -460,9 +460,9 @@ const games = [
     "bluff": "Não muito",
     "party": "Parcialmente",
     "complexity": "Fácil/Média",
-    "how": "Os jogadores assumem o papel de piratas tentando acumular tesouros, formar tripulações e ganhar mais ouro que os adversários. Durante a partida: •recrutam personagens •usam habilidades •roubam recursos •fazem combinações para pontuar",
-    "feeling": "Leve, caótico e bem divertido.",
-    "strength": "Muita interação entre jogadores e partidas descontraídas."
+    "how": "Cada jogador tenta juntar tesouros, contratar personagens e montar combinações que rendam mais ouro. As cartas permitem usar habilidades, roubar recursos, proteger sua tripulação e atrapalhar os planos dos rivais. O desafio é equilibrar acumular pontos com se defender das interferências dos outros piratas.",
+    "feeling": "Aventura leve, bagunçada e cheia de pequenas provocações.",
+    "strength": "Tem tema fácil de entender e muita interação entre os jogadores."
   },
   {
     "title": "Potion Rush",
@@ -475,9 +475,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil/Média",
-    "how": "Os jogadores coletam ingredientes e montam combinações para criar poções e ganhar pontos. Cada rodada envolve: •escolher cartas •criar combos •usar efeitos especiais •administrar recursos melhor que os adversários",
-    "feeling": "Leve, rápido e cheio de combos satisfatórios.",
-    "strength": "Boa mistura de estratégia simples com visual divertido."
+    "how": "Os jogadores coletam ingredientes e usam combinações para preparar poções que dão pontos ou efeitos especiais. Em cada rodada, você decide quais recursos pegar, quais receitas completar e como aproveitar bônus antes dos adversários. A partida premia quem monta bons combos sem desperdiçar cartas.",
+    "feeling": "Leve, colorido e satisfatório quando uma sequência de poções encaixa.",
+    "strength": "Mistura estratégia simples com um tema fácil de visualizar."
   },
   {
     "title": "Project L",
@@ -490,9 +490,9 @@ const games = [
     "bluff": "Não",
     "party": "Não",
     "complexity": "Média",
-    "how": "Você resolve puzzles usando peças tipo Tetris. Completar puzzles melhora suas peças e acelera sua evolução.",
-    "feeling": "Muito satisfatório visualmente.",
-    "strength": "Elegante e inteligente."
+    "how": "Você pega puzzles e preenche seus espaços com peças geométricas parecidas com Tetris. Ao completar um puzzle, ganha pontos e, muitas vezes, peças melhores para resolver desafios maiores. A partida é uma corrida para construir uma “máquina” eficiente: pegar peças, completar puzzles e transformar recompensas em novas oportunidades.",
+    "feeling": "Muito satisfatório visualmente, com sensação clara de evolução a cada peça nova.",
+    "strength": "É elegante, bonito e oferece decisões estratégicas sem regras complicadas."
   },
   {
     "title": "Quartz",
@@ -505,9 +505,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil",
-    "how": "Os jogadores são mineradores tentando coletar cristais valiosos em uma mina. A cada rodada você decide: •continuar minerando para ganhar mais cristais •ou sair antes e garantir seus pontos O problema é que criaturas e perigos podem aparecer, fazendo você perder parte do que coletou.",
-    "feeling": "Tensão leve e divertida de “arriscar ou garantir”.",
-    "strength": "Muito acessível e com partidas rápidas."
+    "how": "Os jogadores são anões minerando cristais em uma caverna. No seu turno, você decide continuar cavando para tentar pegar mais cristais ou sair da mina para garantir o que já coletou. Continuar pode render mais pontos, mas também pode revelar perigos que fazem você perder recursos. Vence quem administrar melhor o risco ao longo das rodadas.",
+    "feeling": "Tensão divertida de “só mais uma compra” antes de tudo dar errado.",
+    "strength": "É muito acessível e cria torcida, provocação e risadas rapidamente."
   },
   {
     "title": "Saboteur",
@@ -520,9 +520,9 @@ const games = [
     "bluff": "Sim",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores constroem túneis até o ouro. Mas sabotadores secretos tentam atrapalhar: •quebrando ferramentas •criando caminhos errados •atrasando o grupo",
-    "feeling": "Paranoia divertida.",
-    "strength": "Ótimo equilíbrio entre estratégia e suspeita."
+    "how": "A maioria dos jogadores são anões tentando construir túneis até o ouro, mas alguns são sabotadores secretos. Em cada turno, você pode colocar caminhos, consertar ou quebrar ferramentas e dificultar o avanço dos outros. O grupo precisa observar ações suspeitas para descobrir quem está ajudando e quem está desviando o túnel de propósito.",
+    "feeling": "Paranoia divertida, acusações constantes e alianças instáveis.",
+    "strength": "Equilibra bem construção de caminho, blefe e dedução social."
   },
   {
     "title": "Sintonia",
@@ -535,12 +535,12 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores tentam entrar “em sintonia” pensando de forma parecida. Uma palavra, tema ou situação é apresentada, e os jogadores precisam dar respostas que combinem entre si sem poder combinar antes. Quanto mais pessoas pensarem parecido, mais pontos o grupo faz.",
-    "feeling": "Muito leve, social e engraçado.",
-    "strength": "Gera conversas e momentos inesperados rapidamente."
+    "how": "O jogo apresenta um tema, palavra ou situação, e os jogadores tentam dar respostas que combinem entre si sem combinar antes. A pontuação vem de pensar parecido: quanto mais respostas iguais ou compatíveis aparecem, melhor para o grupo ou equipe. O desafio é prever o raciocínio das outras pessoas, não encontrar uma resposta perfeita.",
+    "feeling": "Social, leve e engraçado quando todo mundo descobre que pensou diferente.",
+    "strength": "Gera conversa imediatamente e funciona bem até com grupos grandes."
   },
   {
-    "title": "Sóuma",
+    "title": "Só Uma",
     "images": ["assets/games/so_uma_1.jpg", "assets/games/so_uma_2.jpg"],
     "players": "3–7",
     "time": "20–30 min",
@@ -550,9 +550,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Um jogador tenta adivinhar uma palavra secreta. Os outros escrevem dicas de uma palavra para ajudá-lo…mas existe um detalhe: dicas iguais são apagadas antes dele ver. Então o grupo precisa pensar em pistas criativas sem combinar entre si.",
-    "feeling": "Leve, engraçado e muito satisfatório quando o grupo entra em sintonia.",
-    "strength": "Extremamente simples e funciona com praticamente qualquer pessoa."
+    "how": "Um jogador precisa adivinhar uma palavra secreta. Os demais escrevem, sem conversar, uma única palavra de dica para ajudar. Antes da dica chegar ao adivinhador, dicas repetidas são canceladas e removidas, então o grupo precisa ser criativo sem ficar obscuro demais. O objetivo é acertar o máximo de palavras possível em conjunto.",
+    "feeling": "Leve, cooperativo e muito divertido quando dicas óbvias somem da mesa.",
+    "strength": "É extremamente simples e costuma funcionar com qualquer tipo de grupo."
   },
   {
     "title": "Sonora",
@@ -565,9 +565,9 @@ const games = [
     "bluff": "Não",
     "party": "Não muito",
     "complexity": "Média",
-    "how": "Você arremessa discos num tabuleiro e marca pontos dependendo da área atingida. Cada área ativa efeitos diferentes: •combos •multiplicadores •bônus",
-    "feeling": "Mistura habilidade física com puzzle estratégico.",
-    "strength": "Mecânica muito diferente."
+    "how": "Você arremessa discos em um tabuleiro e registra resultados em uma folha individual. A área atingida define quais espaços podem ser marcados, quais combos ativam e quais multiplicadores entram em jogo. A partida mistura mira física com planejamento: acertar uma área boa é importante, mas usar bem o resultado na folha é o que rende pontos.",
+    "feeling": "Mistura diferente de habilidade manual, sorte controlada e quebra-cabeça estratégico.",
+    "strength": "A mecânica de arremessar discos deixa o jogo bem distinto de outros “roll/write”."
   },
   {
     "title": "Spyfall 2",
@@ -580,9 +580,9 @@ const games = [
     "bluff": "Sim",
     "party": "Sim",
     "complexity": "Média",
-    "how": "Todos sabem o local secreto…menos o espião. Os jogadores fazem perguntas tentando descobrir: •quem é o espião •ou qual é o local",
-    "feeling": "Interrogatório social.",
-    "strength": "Muito bom com grupos falantes."
+    "how": "Todos recebem uma carta com o mesmo local secreto, menos o espião, que não sabe onde está. Os jogadores fazem perguntas uns aos outros para descobrir quem está perdido, enquanto o espião tenta responder de forma convincente e deduzir o local. O grupo vence se identificar o espião; o espião vence se não for descoberto ou se adivinhar o local.",
+    "feeling": "Interrogatório social com respostas vagas, suspeitas e risadas nervosas.",
+    "strength": "Brilha com grupos falantes que gostam de improvisar e blefar."
   },
   {
     "title": "The Mind",
@@ -595,9 +595,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "O grupo deve jogar cartas em ordem…sem conversar. Vocês precisam “sentir” o timing.",
-    "feeling": "Parece telepatia.",
-    "strength": "Experiência muito única."
+    "how": "O grupo precisa jogar cartas numeradas em ordem crescente, mas ninguém pode falar, mostrar cartas ou combinar sinais. Cada pessoa tenta sentir o momento certo de jogar com base no tempo que passou e na reação dos outros. A cada fase, mais cartas entram na mão e a coordenação silenciosa fica mais difícil.",
+    "feeling": "Parece telepatia quando dá certo e desastre inevitável quando alguém se precipita.",
+    "strength": "Oferece uma experiência cooperativa única usando regras mínimas."
   },
   {
     "title": "Time's Up!",
@@ -610,9 +610,9 @@ const games = [
     "bluff": "Não",
     "party": "Muito",
     "complexity": "Fácil",
-    "how": "Os jogadores tentam fazer sua equipe adivinhar nomes/personagens. Rodada 1: vale falar livremente. Rodada 2: apenas uma palavra. Rodada 3: somente mímica.",
-    "feeling": "Vai ficando cada vez mais caótico e engraçado.",
-    "strength": "Excelente para grupos grandes."
+    "how": "As equipes tentam adivinhar os mesmos nomes ou personagens ao longo de três rodadas. Na primeira, quem dá a dica pode falar bastante; na segunda, só pode usar uma palavra; na terceira, precisa fazer mímica. Como as cartas se repetem, o jogo fica mais engraçado a cada rodada, porque todos lembram das pistas anteriores.",
+    "feeling": "Barulhento, progressivamente caótico e cheio de piadas internas.",
+    "strength": "É excelente para grupos grandes e coloca todo mundo para participar."
   },
   {
     "title": "Trial by Trolley",
@@ -625,9 +625,9 @@ const games = [
     "bluff": "Não",
     "party": "Muito",
     "complexity": "Fácil",
-    "how": "Cada equipe tenta convencer o juiz sobre qual trilho o trem deve atropelar. As cartas criam cenários absurdos. Você argumenta defendendo pessoas horríveis ou salvando personagens bizarros.",
-    "feeling": "Humor caótico e debates absurdos.",
-    "strength": "Excelente para improviso."
+    "how": "Duas equipes montam trilhos com personagens bons, ruins e modificadores absurdos. Um jogador atua como condutor do bonde e decide qual trilho será atropelado. Cada equipe argumenta para salvar seu lado e condenar o outro, usando lógica torta, humor e improviso. A graça está mais no debate do que em vencer.",
+    "feeling": "Debate absurdo, humor sombrio e argumentos cada vez mais exagerados.",
+    "strength": "Perfeito para quem gosta de improvisar, convencer e criar cenas ridículas."
   },
   {
     "title": "Trio",
@@ -640,9 +640,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores tentam formar trios de cartas iguais revelando cartas da mesa ou a menor/maior carta da mão dos outros jogadores. É preciso memorizar números já vistos e deduzir onde estão os pares restantes.",
-    "feeling": "Leve, rápido e viciante.",
-    "strength": "Muito simples de aprender e ótimo para qualquer grupo."
+    "how": "Os jogadores tentam encontrar três cartas de mesmo número. No seu turno, você pode revelar cartas da mesa ou pedir a menor ou maior carta da mão de outro jogador. Como as informações aparecem aos poucos, é preciso memorizar números vistos, deduzir o que está nas mãos e escolher o momento certo de tentar formar um trio.",
+    "feeling": "Leve, esperto e viciante, com pequenas descobertas a cada turno.",
+    "strength": "É muito simples de aprender e agrada tanto crianças quanto adultos."
   },
   {
     "title": "Tuki",
@@ -655,9 +655,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil/Média",
-    "how": "Os jogadores precisam construir estruturas usando peças de madeira e blocos seguindo cartas de desafio. Cada construção deve respeitar regras específicas: •equilíbrio •posição das peças •formato correto Quem montar corretamente mais rápido ganha a rodada.",
-    "feeling": "Mistura de quebra-cabeça com tensão de habilidade manual.",
-    "strength": "Muito bonito visualmente e divertido de jogar em grupo."
+    "how": "A cada rodada, os jogadores precisam construir uma figura mostrada em uma carta usando peças coloridas e blocos brancos de suporte. A estrutura precisa respeitar posição, equilíbrio e orientação correta. Quem completa o desafio corretamente mais rápido evita penalidades, então o jogo mistura visão espacial com mãos firmes.",
+    "feeling": "Quebra-cabeça físico com pressa, concentração e pequenas quedas dramáticas.",
+    "strength": "É bonito na mesa e transforma raciocínio espacial em uma disputa divertida."
   },
   {
     "title": "Turing Machine",
@@ -670,9 +670,9 @@ const games = [
     "bluff": "Não",
     "party": "Não",
     "complexity": "Alta",
-    "how": "Os jogadores tentam descobrir um código secreto usando verificadores lógicos. Você faz perguntas indiretas e deduz números corretos.",
-    "feeling": "Sudoku hardcore.",
-    "strength": "Dedução brilhante."
+    "how": "Os jogadores tentam descobrir um código secreto de três números usando perguntas lógicas. Em cada rodada, você testa uma hipótese em verificadores que respondem apenas se uma condição é verdadeira ou falsa, como comparar valores ou identificar padrões. Vence quem cruzar as pistas com eficiência e anunciar o código correto primeiro.",
+    "feeling": "Dedução pura, cerebral e parecida com resolver um sudoku tecnológico.",
+    "strength": "É brilhante para quem gosta de lógica, eliminação de possibilidades e desafios difíceis."
   },
   {
     "title": "Unicorn Fever",
@@ -685,9 +685,9 @@ const games = [
     "bluff": "Leve",
     "party": "Sim",
     "complexity": "Média",
-    "how": "Os jogadores apostam em corridas de unicórnios. Durante a corrida: •usam cartas •sabotam adversários •fortalecem unicórnios •manipulam resultados O objetivo não é controlar um unicórnio. É ganhar dinheiro apostando corretamente.",
-    "feeling": "Muito imprevisível e caótico.",
-    "strength": "Mistura aposta + humor + sabotagem."
+    "how": "Os jogadores não controlam diretamente um unicórnio; eles apostam em corridas e tentam manipular o resultado. Antes e durante as provas, é possível usar cartas, melhorar ou prejudicar competidores e ajustar suas apostas para ganhar mais dinheiro. Vence quem administrar melhor risco, informação e sabotagem ao longo das corridas.",
+    "feeling": "Corrida imprevisível, colorida e cheia de gritos quando o favorito tropeça.",
+    "strength": "Mistura apostas, humor e interferência direta sem exigir estratégia pesada."
   },
   {
     "title": "UNO Flex!",
@@ -700,9 +700,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Segue a base clássica do UNO: os jogadores precisam descartar cartas combinando cores ou números. O diferencial são as cartas “Flex”, que permitem mudar regras e usar versões mais poderosas das ações tradicionais. Dependendo do estado do seu marcador Flex, você pode: •trocar cor livremente •inverter efeitos •fazer jogadores comprarem mais cartas",
-    "feeling": "UNO mais estratégico e imprevisível.",
-    "strength": "Mantém a simplicidade do UNO com muito mais caos e reviravoltas."
+    "how": "A base é o UNO clássico: descartar cartas combinando cor ou número e tentar ficar sem cartas primeiro. O diferencial são as cartas Flex, que podem mudar de cor ou ativar versões mais fortes de efeitos conhecidos, dependendo do estado do seu marcador. Você precisa decidir quando gastar esse poder para virar a rodada a seu favor.",
+    "feeling": "UNO familiar, mas com mais reviravoltas e escolhas de timing.",
+    "strength": "Mantém a simplicidade do UNO e adiciona uma camada divertida de surpresa."
   },
   {
     "title": "UNO Flip!",
@@ -715,9 +715,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Segue as regras clássicas do UNO, mas o baralho possui dois lados: •lado claro •lado escuro Quando uma carta FLIP é jogada:todos viram suas cartas para o outro lado. O lado escuro possui ações muito mais agressivas. Ex: comprar muitas cartas; pular vários turnos; punições mais fortes",
-    "feeling": "A partida muda completamente do nada.",
-    "strength": "Uma das versões mais divertidas e caóticas do UNO."
+    "how": "O jogo começa como UNO, mas todas as cartas têm dois lados: claro e escuro. Quando alguém joga uma carta Flip, todos viram a mão, o baralho e o descarte para o outro lado. O lado escuro tem punições mais fortes, então a partida pode mudar totalmente de ritmo de uma hora para outra.",
+    "feeling": "Familiar no começo e muito mais agressivo quando o lado escuro aparece.",
+    "strength": "É uma das variações mais fáceis de explicar e mais caóticas de jogar."
   },
   {
     "title": "UNO Show 'em No Mercy",
@@ -730,9 +730,9 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "É uma versão extremamente caótica e cruel do UNO. Além das regras clássicas, existem cartas muito mais agressivas: •comprar grandes quantidades de cartas •empilhar punições •eliminar jogadores rapidamente •inverter completamente a partida As punições acumulam facilmente, criando rodadas absurdas.",
-    "feeling": "UNO no modo “violência máxima”.",
-    "strength": "Perfeito para grupos que gostam de caos e zoeira pesada."
+    "how": "Esta versão mantém a lógica do UNO, mas aumenta muito a agressividade das cartas. Há punições com compra de muitas cartas, efeitos que se acumulam e regras que podem eliminar jogadores quando a mão fica grande demais. O objetivo ainda é ficar sem cartas, mas sobreviver às sequências de punição vira parte central da diversão.",
+    "feeling": "UNO em modo extremo, cruel e cheio de viradas absurdas.",
+    "strength": "Perfeito para grupos que querem caos, provocação e pouca piedade."
   },
   {
     "title": "UNO Party!",
@@ -745,9 +745,9 @@ const games = [
     "bluff": "Não",
     "party": "Muito",
     "complexity": "Fácil",
-    "how": "Segue as regras clássicas doUNO: os jogadores precisam descartar cartas combinando cor ou número. A diferença é que esta versão adiciona cartas especiais focadas em grupos grandes, criando: •rodadas gigantes •troca coletiva de cartas •punições em massa •muito mais caos",
-    "feeling": "UNO totalmente descontrolado.",
-    "strength": "Excelente para grupos grandes e festas."
+    "how": "A base continua sendo descartar cartas por cor ou número até ficar sem cartas. Esta versão foi pensada para mesas grandes e inclui cartas que envolvem várias pessoas ao mesmo tempo, como trocas coletivas, punições em massa e efeitos que mudam o sentido da confusão. Quanto mais gente na mesa, mais barulhenta a partida fica.",
+    "feeling": "UNO ampliado para festa, com rodadas longas, gritos e muitas reações em cadeia.",
+    "strength": "É uma ótima opção quando o grupo é grande demais para jogos de cartas tradicionais."
   },
   {
     "title": "Wandering Towers",
@@ -760,9 +760,9 @@ const games = [
     "bluff": "Não",
     "party": "Parcialmente",
     "complexity": "Fácil/Média",
-    "how": "Os jogadores controlam pequenos magos tentando chegar ao castelo antes dos outros.O diferencial é que as torres do tabuleiro se movem e podem “capturar” magos, escondendo-os temporariamente. Você precisa: •mover magos •movimentar torres •libertar personagens •atrapalhar adversários Tudo isso enquanto tenta administrar suas cartas da melhor forma.",
-    "feeling": "Caótico, divertido e bem dinâmico.",
-    "strength": "Mistura estratégia leve com momentos muito engraçados."
+    "how": "Cada jogador controla magos que precisam chegar ao castelo, mas as torres do tabuleiro também se movem. Quando uma torre passa por cima de um mago, ele fica escondido e pode ser esquecido até ser revelado novamente. Você usa cartas para mover magos ou torres, tenta cumprir requisitos e ainda atrapalha os adversários cobrindo peças importantes.",
+    "feeling": "Dinâmico, engraçado e cheio de momentos de “onde foi parar meu mago?”.",
+    "strength": "Mistura corrida, memória e estratégia leve com presença de mesa muito charmosa."
   },
   {
     "title": "Zombicide: 2nd Edition",
@@ -775,9 +775,9 @@ const games = [
     "bluff": "Não",
     "party": "Não",
     "complexity": "Média/Alta",
-    "how": "Sobreviventes enfrentam hordas gigantes de zumbis enquanto completam objetivos.",
-    "feeling": "Filme de ação exagerado.",
-    "strength": "Muito temático e divertido."
+    "how": "Os jogadores controlam sobreviventes em cenários cheios de objetivos, armas e hordas de zumbis. A cada rodada, o grupo explora o mapa, busca equipamentos, ataca inimigos e tenta completar a missão antes de ser cercado. Conforme os sobreviventes ficam mais fortes, mais zumbis aparecem, então o grupo precisa avançar sem deixar a ameaça sair do controle.",
+    "feeling": "Filme de ação cooperativo, exagerado e cheio de momentos desesperados.",
+    "strength": "É muito temático e entrega bem a fantasia de sobreviver a uma invasão zumbi em equipe."
   }
 ];
 
