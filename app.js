@@ -729,38 +729,119 @@ const games = [
   }
 ];
 
-const searchInput = document.querySelector("#search");
-const modeFilter = document.querySelector("#mode-filter");
-const complexityFilter = document.querySelector("#complexity-filter");
-const partyFilter = document.querySelector("#party-filter");
-const clearButton = document.querySelector("#clear-filters");
-const gamesGrid = document.querySelector("#games");
-const resultCount = document.querySelector("#result-count");
-const emptyState = document.querySelector("#empty-state");
+const STORAGE_KEYS = {
+  theme: "boardgames-theme",
+  favorites: "boardgames-favorites",
+  ratings: "boardgames-ratings",
+  recent: "boardgames-recent",
+};
 
-const normalize = (value) =>
+const state = {
+  moods: new Set(),
+  lastRecommendation: null,
+  favorites: readStorage(STORAGE_KEYS.favorites, []),
+  ratings: readStorage(STORAGE_KEYS.ratings, {}),
+  recent: readStorage(STORAGE_KEYS.recent, []),
+};
+
+const elements = {
+  search: document.querySelector("#search"),
+  players: document.querySelector("#players-filter"),
+  time: document.querySelector("#time-filter"),
+  complexity: document.querySelector("#complexity-filter"),
+  clear: document.querySelector("#clear-filters"),
+  random: document.querySelector("#random-game"),
+  randomHero: document.querySelector("#random-hero"),
+  themeToggle: document.querySelector("#theme-toggle"),
+  gamesGrid: document.querySelector("#games"),
+  shelves: document.querySelector("#shelves"),
+  recommendation: document.querySelector("#recommendation"),
+  resultCount: document.querySelector("#result-count"),
+  activeSummary: document.querySelector("#active-summary"),
+  emptyState: document.querySelector("#empty-state"),
+  dialog: document.querySelector("#game-dialog"),
+  dialogContent: document.querySelector("#dialog-content"),
+  dialogClose: document.querySelector("#dialog-close"),
+};
+
+const moodConfig = {
+  funny: { label: "Quer rir", tags: ["😂 Engraçado", "🎉 Party game"], terms: ["humor", "engraçado", "zoeira", "mímica"] },
+  strategic: { label: "Quer pensar", tags: ["🧠 Estratégico"], terms: ["estratégia", "dedução", "lógica", "puzzle", "tática"] },
+  fast: { label: "Algo rápido", tags: ["⚡ Rápido"], maxTime: 30 },
+  chaos: { label: "Caos", tags: ["🔥 Caótico"], terms: ["caos", "caótico", "imprevisível", "sabotagem"] },
+  coop: { label: "Cooperação", tags: ["🤝 Cooperativo"], terms: ["cooperativo", "coop"] },
+  bluff: { label: "Blefe", tags: ["😈 Blefe"], terms: ["bluff", "blefe", "mentir", "secreta", "espião"] },
+  easy: { label: "Pouca regra", complexity: "leve" },
+  party: { label: "Party game", tags: ["🎉 Party game"], terms: ["party", "festa", "grupo grande"] },
+};
+
+function readStorage(key, fallback) {
+  try {
+    return JSON.parse(localStorage.getItem(key)) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+const normalize = (value = "") =>
   value
     .toString()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 
-const uniqueValues = (key) =>
-  [...new Set(games.map((game) => game[key]).filter(Boolean))].sort((a, b) =>
-    a.localeCompare(b, "pt-BR"),
-  );
+const slugify = (value) => normalize(value).replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const bySlug = new Map(games.map((game) => [slugify(game.title), game]));
+const clamp = (number, min, max) => Math.min(Math.max(number, min), max);
 
-const fillSelect = (select, values) => {
-  values.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = value;
-    select.append(option);
-  });
+const parseNumbers = (value = "") => (value.match(/\d+/g) || []).map(Number);
+const playerRange = (players) => {
+  const nums = parseNumbers(players);
+  if (!nums.length) return { min: 1, max: 99, best: "grupo flexível" };
+  const min = nums[0];
+  const max = players.includes("+") ? 99 : nums[nums.length - 1];
+  const displayMax = max === 99 ? `${min}+` : max;
+  const middle = max === 99 ? Math.min(min + 3, 8) : Math.round((min + max) / 2);
+  return { min, max, best: max === 99 ? `${min}–${middle}+` : `${middle}${max - min > 2 ? `–${Math.min(max, middle + 1)}` : ""}` , displayMax };
 };
 
-const getPartyBucket = (value) => {
-  if (!value) return "";
+const timeInfo = (time) => {
+  const nums = parseNumbers(time);
+  const min = nums[0] || 20;
+  const max = nums[nums.length - 1] || min;
+  return { min, max, average: Math.round((min + max) / 2) };
+};
+
+const complexityLevel = (complexity = "") => {
+  const value = normalize(complexity);
+  if (value.includes("alta")) return { key: "pesado", label: "🔴 pesado" };
+  if (value.includes("media") || value.includes("média")) return { key: "medio", label: "🟡 médio" };
+  return { key: "leve", label: "🟢 leve" };
+};
+
+const includesAny = (game, terms) => {
+  const haystack = normalize([game.title, game.style, game.mode, game.bluff, game.party, game.how, game.feeling, game.strength].join(" "));
+  return terms.some((term) => haystack.includes(normalize(term)));
+};
+
+const getTags = (game) => {
+  const tags = new Set();
+  const text = normalize([game.title, game.style, game.mode, game.bluff, game.party, game.how, game.feeling, game.strength].join(" "));
+  if (/caos|caot|sabot|imprevis|trai/.test(text)) tags.add("🔥 Caótico");
+  if (/estrateg|deducao|dedu|logica|puzzle|tatica|controle/.test(text)) tags.add("🧠 Estratégico");
+  if (/humor|engrac|zoeira|absurd|mimica|criativ/.test(text)) tags.add("😂 Engraçado");
+  if (/cooperativo|coop/.test(text)) tags.add("🤝 Cooperativo");
+  if (timeInfo(game.time).max <= 30) tags.add("⚡ Rápido");
+  if (/bluff|blefe|mentir|secreta|espiao|espião/.test(text)) tags.add("😈 Blefe");
+  if (["Sim", "Muito"].includes(getPartyBucket(game.party)) || /party|festa|grupo grande/.test(text)) tags.add("🎉 Party game");
+  return [...tags].slice(0, 5);
+};
+
+const getPartyBucket = (value = "") => {
   if (value.startsWith("Não")) return "Não";
   if (value.startsWith("Muito")) return "Muito";
   if (value.startsWith("Parcialmente")) return "Parcialmente";
@@ -768,80 +849,342 @@ const getPartyBucket = (value) => {
   return value;
 };
 
-const cardTemplate = (game) => `
-  <article class="game-card">
-    <div class="card-top">
-      <h3>${game.title}</h3>
-      <span class="players" title="Jogadores">${game.players || "—"}</span>
-    </div>
-    <div class="meta" aria-label="Metadados do jogo">
-      ${game.time ? `<span class="tag">⏱ ${game.time}</span>` : ""}
-      ${game.age ? `<span class="tag">👶 ${game.age}</span>` : ""}
-      ${game.complexity ? `<span class="tag accent">${game.complexity}</span>` : ""}
-      ${game.mode ? `<span class="tag">${game.mode}</span>` : ""}
-      ${game.party ? `<span class="tag">Party: ${game.party}</span>` : ""}
-      ${game.bluff ? `<span class="tag">Bluff: ${game.bluff}</span>` : ""}
-    </div>
-    <section>
-      <h4>Estilo</h4>
-      <p>${game.style || "Não informado."}</p>
-    </section>
-    <section>
-      <h4>Como funciona</h4>
-      <p>${game.how || "Descrição não informada."}</p>
-    </section>
-    <section>
-      <h4>Sensação</h4>
-      <p>${game.feeling || "Não informada."}</p>
-    </section>
-    <section>
-      <h4>Ponto forte</h4>
-      <p>${game.strength || "Não informado."}</p>
-    </section>
-  </article>
-`;
+const getSetupTime = (game) => {
+  const base = timeInfo(game.time).average;
+  const level = complexityLevel(game.complexity).key;
+  if (level === "pesado") return "10–15 min";
+  if (level === "medio") return base >= 60 ? "8–12 min" : "5–8 min";
+  return base <= 20 ? "1–3 min" : "3–5 min";
+};
 
-const matchesFilters = (game) => {
-  const query = normalize(searchInput.value.trim());
+const getTeachTime = (game) => {
+  const level = complexityLevel(game.complexity).key;
+  const base = timeInfo(game.time).average;
+  if (level === "pesado") return "12–20 min";
+  if (level === "medio") return base >= 60 ? "8–12 min" : "5–8 min";
+  return "2–5 min";
+};
+
+const scoreGame = (game) => {
+  let score = 0;
+  const query = normalize(elements.search.value.trim());
+  const playerCount = Number(elements.players.value);
+  const maxTime = Number(elements.time.value);
+  const selectedComplexity = elements.complexity.value;
   const searchable = normalize(Object.values(game).join(" "));
-  const matchesSearch = !query || searchable.includes(query);
-  const matchesMode = !modeFilter.value || game.mode === modeFilter.value;
-  const matchesComplexity =
-    !complexityFilter.value || game.complexity === complexityFilter.value;
-  const matchesParty = !partyFilter.value || getPartyBucket(game.party) === partyFilter.value;
+  const range = playerRange(game.players);
+  const gameTime = timeInfo(game.time);
+  const level = complexityLevel(game.complexity).key;
 
-  return matchesSearch && matchesMode && matchesComplexity && matchesParty;
+  if (query && !searchable.includes(query)) return -Infinity;
+  if (query) score += 8;
+  if (playerCount) {
+    if (playerCount < range.min || playerCount > range.max) return -Infinity;
+    score += 10 - Math.abs(playerCount - clamp(playerCount, range.min, range.max));
+  }
+  if (maxTime) {
+    if (gameTime.min > maxTime) return -Infinity;
+    score += gameTime.max <= maxTime ? 8 : 3;
+  }
+  if (selectedComplexity && level !== selectedComplexity) return -Infinity;
+
+  state.moods.forEach((mood) => {
+    const config = moodConfig[mood];
+    if (config.maxTime && gameTime.max <= config.maxTime) score += 8;
+    if (config.complexity && level === config.complexity) score += 8;
+    if (config.terms && includesAny(game, config.terms)) score += 7;
+    if (config.tags && config.tags.some((tag) => getTags(game).includes(tag))) score += 5;
+  });
+
+  if (state.favorites.includes(game.title)) score += 4;
+  score += Number(state.ratings[game.title] || 0) * 1.5;
+  if (state.recent.includes(game.title)) score -= 5;
+  return score;
+};
+
+const getRankedGames = () => games
+  .map((game) => ({ game, score: scoreGame(game) }))
+  .filter((item) => item.score > -Infinity)
+  .sort((a, b) => b.score - a.score || a.game.title.localeCompare(b.game.title, "pt-BR"));
+
+const similarGames = (game, limit = 4) => {
+  const tags = getTags(game);
+  const styleWords = normalize(game.style).split(/\s+|\//).filter((word) => word.length > 3);
+  return games
+    .filter((candidate) => candidate.title !== game.title)
+    .map((candidate) => {
+      const candidateTags = getTags(candidate);
+      const sharedTags = tags.filter((tag) => candidateTags.includes(tag)).length;
+      const sharedStyle = styleWords.filter((word) => normalize(candidate.style).includes(word)).length;
+      const sameMode = candidate.mode === game.mode ? 2 : 0;
+      return { game: candidate, score: sharedTags * 3 + sharedStyle + sameMode };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.game.title.localeCompare(b.game.title, "pt-BR"))
+    .slice(0, limit)
+    .map((item) => item.game);
+};
+
+const escapeHtml = (value = "") => value.toString().replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" }[char]));
+
+const cardTemplate = (game, compact = false) => {
+  const range = playerRange(game.players);
+  const level = complexityLevel(game.complexity);
+  const tags = getTags(game);
+  const isFavorite = state.favorites.includes(game.title);
+  const rating = Number(state.ratings[game.title] || 0);
+  return `
+    <article class="game-card fade-in" data-game="${escapeHtml(slugify(game.title))}">
+      <div class="card-top">
+        <div>
+          <p class="microcopy">Brilha em ${escapeHtml(range.best)} jogadores</p>
+          <h3>${escapeHtml(game.title)}</h3>
+        </div>
+        <button class="icon-button favorite-button ${isFavorite ? "active" : ""}" type="button" data-action="favorite" aria-label="Favoritar ${escapeHtml(game.title)}" aria-pressed="${isFavorite}">♥</button>
+      </div>
+      <div class="card-metrics" aria-label="Informações rápidas">
+        <span><strong>${escapeHtml(game.players || "—")}</strong><small>jogadores</small></span>
+        <span><strong>${escapeHtml(game.time || "—")}</strong><small>partida</small></span>
+        <span><strong>${getTeachTime(game)}</strong><small>explicação</small></span>
+        <span><strong>${getSetupTime(game)}</strong><small>setup</small></span>
+      </div>
+      <div class="meta">
+        <span class="tag complexity ${level.key}">${level.label}</span>
+        ${tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}
+      </div>
+      <p>${escapeHtml(game.feeling || game.strength || "Jogo pronto para entrar na mesa.")}</p>
+      ${compact ? "" : `<p class="strength"><strong>Ponto forte:</strong> ${escapeHtml(game.strength || "Não informado.")}</p>`}
+      <div class="card-actions">
+        <button class="details-button" type="button" data-action="details">Ver detalhes</button>
+        <button class="ghost-button" type="button" data-action="played">Marcar jogado</button>
+      </div>
+      <label class="rating-control">Nota local
+        <select data-action="rating" aria-label="Nota local para ${escapeHtml(game.title)}">
+          <option value="0">Sem nota</option>
+          ${[1,2,3,4,5].map((value) => `<option value="${value}" ${rating === value ? "selected" : ""}>${"★".repeat(value)}</option>`).join("")}
+        </select>
+      </label>
+    </article>`;
+};
+
+const renderRecommendation = (ranked) => {
+  const [best] = ranked;
+  if (!best) {
+    elements.recommendation.innerHTML = `<div class="empty-recommendation"><strong>Sem recomendação agora.</strong><span>Tente limpar algum filtro ou aumentar o tempo disponível.</span></div>`;
+    return;
+  }
+  const game = state.lastRecommendation || best.game;
+  const similar = similarGames(game, 3);
+  elements.recommendation.innerHTML = `
+    <div>
+      <p class="eyebrow">Recomendação da mesa</p>
+      <h2>${escapeHtml(game.title)}</h2>
+      <p>${escapeHtml(game.feeling || game.how)}</p>
+      <div class="meta">${getTags(game).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
+    </div>
+    <div class="recommendation-side">
+      <span>⏱ ${escapeHtml(game.time)}</span>
+      <span>👥 ${escapeHtml(game.players)} · brilha em ${escapeHtml(playerRange(game.players).best)}</span>
+      <span>📖 explicação ${getTeachTime(game)}</span>
+      <button class="primary-button" type="button" data-action="details" data-game="${escapeHtml(slugify(game.title))}">Abrir detalhes</button>
+      <p><strong>Você pode gostar também:</strong> ${similar.map((item) => escapeHtml(item.title)).join(", ") || "mais jogos aparecerão com filtros."}</p>
+    </div>`;
+};
+
+const shelfDefinitions = [
+  { title: "Favoritos da mesa", filter: (game) => state.favorites.includes(game.title) || ["Dixit", "Coup", "Hitster", "The Mind"].includes(game.title) },
+  { title: "Melhores para iniciantes", filter: (game) => complexityLevel(game.complexity).key === "leve" && timeInfo(game.time).max <= 30 },
+  { title: "Melhores para festa", filter: (game) => ["Sim", "Muito"].includes(getPartyBucket(game.party)) && playerRange(game.players).max >= 8 },
+  { title: "Jogos rápidos", filter: (game) => timeInfo(game.time).max <= 20 },
+  { title: "Jogos estratégicos", filter: (game) => getTags(game).includes("🧠 Estratégico") && complexityLevel(game.complexity).key !== "leve" },
+];
+
+const renderShelves = () => {
+  elements.shelves.innerHTML = shelfDefinitions.map((shelf) => {
+    const items = games.filter(shelf.filter).slice(0, 6);
+    return `
+      <section class="shelf-card">
+        <h3>${escapeHtml(shelf.title)}</h3>
+        <div class="mini-card-list">
+          ${items.map((game) => `<button class="mini-card" type="button" data-action="details" data-game="${escapeHtml(slugify(game.title))}"><strong>${escapeHtml(game.title)}</strong><span>${escapeHtml(game.time)} · ${escapeHtml(game.players)}</span></button>`).join("") || "<p>Favorite jogos para montar esta prateleira.</p>"}
+        </div>
+      </section>`;
+  }).join("");
 };
 
 const renderGames = () => {
-  const filteredGames = games.filter(matchesFilters);
-  gamesGrid.innerHTML = filteredGames.map(cardTemplate).join("");
-  resultCount.textContent = filteredGames.length;
-  emptyState.hidden = filteredGames.length > 0;
+  const ranked = getRankedGames();
+  const filteredGames = ranked.map((item) => item.game);
+  elements.gamesGrid.innerHTML = filteredGames.map((game) => cardTemplate(game)).join("");
+  elements.resultCount.textContent = filteredGames.length;
+  elements.emptyState.hidden = filteredGames.length > 0;
+  const moods = [...state.moods].map((mood) => moodConfig[mood].label);
+  const parts = [
+    moods.length ? moods.join(", ") : "todos os climas",
+    elements.players.value ? `${elements.players.value} jogadores` : null,
+    elements.time.value ? `até ${elements.time.value} min` : null,
+  ].filter(Boolean);
+  elements.activeSummary.textContent = `Mostrando ${parts.join(" · ")}.`;
+  if (!state.lastRecommendation || !filteredGames.includes(state.lastRecommendation)) {
+    state.lastRecommendation = filteredGames[0] || null;
+  }
+  renderRecommendation(ranked);
+  renderShelves();
 };
 
-fillSelect(modeFilter, uniqueValues("mode"));
-fillSelect(complexityFilter, uniqueValues("complexity"));
+const chooseRandomGame = () => {
+  const candidates = getRankedGames().map((item) => item.game).filter((game) => !state.recent.slice(0, 5).includes(game.title));
+  const pool = candidates.length ? candidates : getRankedGames().map((item) => item.game);
+  if (!pool.length) return;
+  const weightedPool = pool.slice(0, Math.min(pool.length, 12));
+  state.lastRecommendation = weightedPool[Math.floor(Math.random() * weightedPool.length)];
+  renderGames();
+  elements.recommendation.scrollIntoView({ behavior: "smooth", block: "center" });
+};
+
+const markPlayed = (title) => {
+  state.recent = [title, ...state.recent.filter((item) => item !== title)].slice(0, 10);
+  writeStorage(STORAGE_KEYS.recent, state.recent);
+};
+
+const toggleFavorite = (title) => {
+  state.favorites = state.favorites.includes(title)
+    ? state.favorites.filter((item) => item !== title)
+    : [...state.favorites, title];
+  writeStorage(STORAGE_KEYS.favorites, state.favorites);
+};
+
+const setRating = (title, rating) => {
+  if (rating > 0) state.ratings[title] = rating;
+  else delete state.ratings[title];
+  writeStorage(STORAGE_KEYS.ratings, state.ratings);
+};
+
+const openDetails = (game) => {
+  const similar = similarGames(game, 5);
+  const recentLabel = state.recent.includes(game.title) ? "Já apareceu nos recentes" : "Ainda não jogado recentemente";
+  elements.dialogContent.innerHTML = `
+    <div class="dialog-hero">
+      <p class="eyebrow">Detalhes do jogo</p>
+      <h2 id="dialog-title">${escapeHtml(game.title)}</h2>
+      <p>${escapeHtml(game.feeling || game.strength || "Uma opção do acervo para testar na mesa.")}</p>
+      <div class="meta">${getTags(game).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
+    </div>
+    <div class="dialog-grid">
+      <section><h3>Resumo útil</h3><ul>
+        <li><strong>Jogadores:</strong> ${escapeHtml(game.players)} · brilha em ${escapeHtml(playerRange(game.players).best)}</li>
+        <li><strong>Partida:</strong> ${escapeHtml(game.time)}</li>
+        <li><strong>Explicação:</strong> ${getTeachTime(game)}</li>
+        <li><strong>Setup:</strong> ${getSetupTime(game)}</li>
+        <li><strong>Complexidade:</strong> ${complexityLevel(game.complexity).label} (${escapeHtml(game.complexity)})</li>
+        <li><strong>Histórico:</strong> ${recentLabel}</li>
+      </ul></section>
+      <section><h3>Regras rápidas</h3><p>${escapeHtml(game.how || "Regras rápidas não informadas.")}</p></section>
+      <section><h3>Por que escolher</h3><p>${escapeHtml(game.strength || "Boa opção para variar a mesa.")}</p></section>
+      <section><h3>Tutorial / link</h3><p>Espaço reservado para adicionar um tutorial textual ou link leve no futuro.</p></section>
+    </div>
+    <section class="similar-block"><h3>Jogos similares · você pode gostar também</h3><div class="mini-card-list">${similar.map((item) => `<button class="mini-card" type="button" data-action="details" data-game="${escapeHtml(slugify(item.title))}"><strong>${escapeHtml(item.title)}</strong><span>${getTags(item).slice(0,2).join(" · ")}</span></button>`).join("")}</div></section>`;
+  if (!elements.dialog.open) {
+    elements.dialog.showModal();
+  }
+};
+
+const handleAction = (event) => {
+  const actionElement = event.target.closest("[data-action]");
+  if (!actionElement) return;
+  const action = actionElement.dataset.action;
+  const card = actionElement.closest("[data-game]");
+  const slug = actionElement.dataset.game || card?.dataset.game;
+  const game = bySlug.get(slug);
+  if (!game) return;
+
+  if (action === "details") openDetails(game);
+  if (action === "favorite") {
+    toggleFavorite(game.title);
+    renderGames();
+  }
+  if (action === "played") {
+    markPlayed(game.title);
+    state.lastRecommendation = game;
+    renderGames();
+  }
+  if (action === "rating") {
+    setRating(game.title, Number(actionElement.value));
+    renderGames();
+  }
+};
+
+const applyTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  elements.themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
+  elements.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "dark" ? "#111827" : "#f8f4ec");
+};
+
+const initializeTheme = () => {
+  const saved = localStorage.getItem(STORAGE_KEYS.theme);
+  const system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  applyTheme(saved || system);
+};
+
+const bindEvents = () => {
+  document.querySelectorAll(".mood-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const mood = chip.dataset.mood;
+      state.moods.has(mood) ? state.moods.delete(mood) : state.moods.add(mood);
+      chip.classList.toggle("active", state.moods.has(mood));
+      chip.setAttribute("aria-pressed", String(state.moods.has(mood)));
+      state.lastRecommendation = null;
+      renderGames();
+    });
+  });
+
+  [elements.search, elements.players, elements.time, elements.complexity].forEach((control) => {
+    control.addEventListener("input", () => {
+      state.lastRecommendation = null;
+      renderGames();
+    });
+  });
+
+  elements.clear.addEventListener("click", () => {
+    state.moods.clear();
+    document.querySelectorAll(".mood-chip").forEach((chip) => {
+      chip.classList.remove("active");
+      chip.setAttribute("aria-pressed", "false");
+    });
+    elements.search.value = "";
+    elements.players.value = "";
+    elements.time.value = "";
+    elements.complexity.value = "";
+    state.lastRecommendation = null;
+    renderGames();
+    elements.search.focus();
+  });
+
+  elements.random.addEventListener("click", chooseRandomGame);
+  elements.randomHero.addEventListener("click", chooseRandomGame);
+  elements.gamesGrid.addEventListener("click", handleAction);
+  elements.gamesGrid.addEventListener("change", handleAction);
+  elements.shelves.addEventListener("click", handleAction);
+  elements.recommendation.addEventListener("click", handleAction);
+  elements.dialogContent.addEventListener("click", handleAction);
+  elements.dialogClose.addEventListener("click", () => elements.dialog.close());
+  elements.dialog.addEventListener("click", (event) => {
+    if (event.target === elements.dialog) elements.dialog.close();
+  });
+
+  elements.themeToggle.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem(STORAGE_KEYS.theme, nextTheme);
+    applyTheme(nextTheme);
+  });
+};
 
 document.querySelector("#total-games").textContent = games.length;
-document.querySelector("#party-count").textContent = games.filter((game) =>
-  ["Sim", "Muito"].includes(getPartyBucket(game.party)),
-).length;
-document.querySelector("#coop-count").textContent = games.filter((game) =>
-  normalize(game.mode).includes("cooperativo"),
-).length;
+document.querySelector("#party-count").textContent = games.filter((game) => ["Sim", "Muito"].includes(getPartyBucket(game.party))).length;
+document.querySelector("#coop-count").textContent = games.filter((game) => normalize(game.mode).includes("cooperativo")).length;
+document.querySelector("#fast-count").textContent = games.filter((game) => timeInfo(game.time).max <= 30).length;
 
-[searchInput, modeFilter, complexityFilter, partyFilter].forEach((control) =>
-  control.addEventListener("input", renderGames),
-);
-
-clearButton.addEventListener("click", () => {
-  searchInput.value = "";
-  modeFilter.value = "";
-  complexityFilter.value = "";
-  partyFilter.value = "";
-  renderGames();
-  searchInput.focus();
-});
-
+initializeTheme();
+bindEvents();
 renderGames();
