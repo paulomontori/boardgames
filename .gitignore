@@ -1,0 +1,11 @@
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+.next/
+
+# Local tooling and OS noise
+.DS_Store
+.env
+.env.*
+*.log
