@@ -1,6 +1,7 @@
 const games = [
   {
     "title": "Bananagrams",
+    "images": ["assets/games/bananagram_1.jpg", "assets/games/bananagram_2.jpg"],
     "players": "1–8",
     "time": "10–20 min",
     "age": "",
@@ -15,6 +16,7 @@ const games = [
   },
   {
     "title": "Balde de Caranguejo",
+    "images": ["assets/games/balde_carangejo_1.png", "assets/games/balde_carangejo_2.png"],
     "players": "2–8",
     "time": "20–40 min",
     "age": "",
@@ -29,6 +31,7 @@ const games = [
   },
   {
     "title": "Bandido",
+    "images": ["assets/games/bandido_1.png", "assets/games/bandido_2.jpg"],
     "players": "1–4",
     "time": "10–20 min",
     "age": "",
@@ -43,6 +46,7 @@ const games = [
   },
   {
     "title": "Bandida",
+    "images": ["assets/games/bandida_1.jpg", "assets/games/bandida_2.jpg"],
     "players": "1–4",
     "time": "10–20 min",
     "age": "",
@@ -57,6 +61,7 @@ const games = [
   },
   {
     "title": "Boggle Slam!",
+    "images": ["assets/games/boggle_1.jpg", "assets/games/boggle_2.jpg"],
     "players": "2–4",
     "time": "10–20 min",
     "age": "",
@@ -71,6 +76,7 @@ const games = [
   },
   {
     "title": "Código Secreto: Imagens",
+    "images": ["assets/games/codigo_secreto_imagens_1.png", "assets/games/codigo_secreto_imagens_2.jpg"],
     "players": "2–8",
     "time": "15–30 min",
     "age": "",
@@ -85,6 +91,7 @@ const games = [
   },
   {
     "title": "Cores com Dicas",
+    "images": ["assets/games/cores_1.png", "assets/games/cores_2.png"],
     "players": "3–10",
     "time": "20–30 min",
     "age": "",
@@ -99,6 +106,7 @@ const games = [
   },
   {
     "title": "Coup",
+    "images": ["assets/games/coup_1.jpg", "assets/games/coup_2.png"],
     "players": "2–6",
     "time": "15 min",
     "age": "",
@@ -113,6 +121,7 @@ const games = [
   },
   {
     "title": "Dany",
+    "images": ["assets/games/dany_1.png", "assets/games/dany_2.jpg"],
     "players": "3–8",
     "time": "20–40 min",
     "age": "",
@@ -127,6 +136,7 @@ const games = [
   },
   {
     "title": "Decisões de Merda",
+    "images": ["assets/games/decisoes_de_merda_1.png", "assets/games/decisoes_de_merda_2.png"],
     "players": "3–10",
     "time": "20–40 min",
     "age": "",
@@ -141,6 +151,7 @@ const games = [
   },
   {
     "title": "Dixit",
+    "images": ["assets/games/dixit_1.jpg", "assets/games/dixit_2.png"],
     "players": "3–8",
     "time": "30 min",
     "age": "",
@@ -155,6 +166,7 @@ const games = [
   },
   {
     "title": "Exploding Kittens",
+    "images": ["assets/games/exploding_kittens_1.jpg", "assets/games/exploding_kittens_1.png"],
     "players": "2–5",
     "time": "15 min",
     "age": "",
@@ -169,6 +181,7 @@ const games = [
   },
   {
     "title": "F.D.P.",
+    "images": ["assets/games/fpd_1.png", "assets/games/fpd_2.png"],
     "players": "4–10+",
     "time": "30–60 min",
     "age": "",
@@ -183,6 +196,7 @@ const games = [
   },
   {
     "title": "Hanabi",
+    "images": ["assets/games/hanabi_1.jpg"],
     "players": "2–5",
     "time": "25 min",
     "age": "",
@@ -197,6 +211,7 @@ const games = [
   },
   {
     "title": "Hitster",
+    "images": ["assets/games/hitster_1.png", "assets/games/hitster_2.jpg"],
     "players": "2–10",
     "time": "30 min",
     "age": "",
@@ -211,6 +226,7 @@ const games = [
   },
   {
     "title": "ITO",
+    "images": ["assets/games/ito_1.jpg", "assets/games/ito_2.png"],
     "players": "2–8",
     "time": "20–30 min",
     "age": "",
@@ -225,6 +241,7 @@ const games = [
   },
   {
     "title": "Jenga",
+    "images": ["assets/games/jenga_1.jpg"],
     "players": "2–8+",
     "time": "10–20 min",
     "age": "",
@@ -239,6 +256,7 @@ const games = [
   },
   {
     "title": "Kariba",
+    "images": ["assets/games/kariba_1.jpg", "assets/games/kariba_2.png"],
     "players": "2–4",
     "time": "15–20 min",
     "age": "",
@@ -253,6 +271,7 @@ const games = [
   },
   {
     "title": "Kingdomino",
+    "images": ["assets/games/king_domino_1.jpg", "assets/games/king_domino_2.png"],
     "players": "2–4",
     "time": "15–25 min",
     "age": "",
@@ -267,6 +286,7 @@ const games = [
   },
   {
     "title": "Love Letter",
+    "images": ["assets/games/love_letter_1.png", "assets/games/love_letter_2.png"],
     "players": "2–6",
     "time": "20 min",
     "age": "",
@@ -281,6 +301,7 @@ const games = [
   },
   {
     "title": "Magic Maze",
+    "images": ["assets/games/magic_maze_1.jpg", "assets/games/magic_maze_2.png"],
     "players": "1–8",
     "time": "15 min",
     "age": "",
@@ -295,6 +316,7 @@ const games = [
   },
   {
     "title": "Misty",
+    "images": ["assets/games/misty_1.jpg", "assets/games/misty_2.png"],
     "players": "2–4",
     "time": "15–30 min",
     "age": "",
@@ -309,6 +331,7 @@ const games = [
   },
   {
     "title": "Munchkin",
+    "images": ["assets/games/munchkin_1.jpg", "assets/games/munchkin_2.jpg"],
     "players": "3–6",
     "time": "60–120 min",
     "age": "",
@@ -323,6 +346,7 @@ const games = [
   },
   {
     "title": "Mysterium",
+    "images": ["assets/games/mysterium_1.jpg", "assets/games/mysterium_2.jpg"],
     "players": "2–7",
     "time": "45 min",
     "age": "",
@@ -337,6 +361,7 @@ const games = [
   },
   {
     "title": "Nem a Pato",
+    "images": ["assets/games/nem_a_pato_1.png", "assets/games/nem_a_pato_2.png"],
     "players": "2–6",
     "time": "15–25 min",
     "age": "",
@@ -351,6 +376,7 @@ const games = [
   },
   {
     "title": "Nova Luna",
+    "images": ["assets/games/nova_luna_1.jpg", "assets/games/nova_luna_2.jpg"],
     "players": "1–4",
     "time": "30–60 min",
     "age": "",
@@ -365,6 +391,7 @@ const games = [
   },
   {
     "title": "Odin",
+    "images": ["assets/games/odin_1.jpg"],
     "players": "2–6",
     "time": "15–30 min",
     "age": "",
@@ -379,6 +406,7 @@ const games = [
   },
   {
     "title": "Pandemic",
+    "images": ["assets/games/pandemic_1.png", "assets/games/pandemic_2.jpg"],
     "players": "2–4",
     "time": "45–60 min",
     "age": "",
@@ -393,6 +421,7 @@ const games = [
   },
   {
     "title": "Parade",
+    "images": ["assets/games/parade_1.png", "assets/games/parade_2.jpg"],
     "players": "2–6",
     "time": "20–30 min",
     "age": "",
@@ -407,6 +436,7 @@ const games = [
   },
   {
     "title": "Perfil Express: Filmes e Séries",
+    "images": ["assets/games/perfil_filmes_series_1.jpg", "assets/games/perfil_filmes_series_2.jpg"],
     "players": "2–10+",
     "time": "20–40 min",
     "age": "",
@@ -421,6 +451,7 @@ const games = [
   },
   {
     "title": "Piratas!",
+    "images": ["assets/games/piratas_1.jpg", "assets/games/piratas_2.png"],
     "players": "2–6",
     "time": "20–40 min",
     "age": "",
@@ -435,6 +466,7 @@ const games = [
   },
   {
     "title": "Potion Rush",
+    "images": ["assets/games/potion_rush_1.jpg"],
     "players": "2–6",
     "time": "20–40 min",
     "age": "",
@@ -449,6 +481,7 @@ const games = [
   },
   {
     "title": "Project L",
+    "images": ["assets/games/project_l_1.png", "assets/games/project_l_2.jpg"],
     "players": "1–6",
     "time": "20–40 min",
     "age": "",
@@ -463,6 +496,7 @@ const games = [
   },
   {
     "title": "Quartz",
+    "images": ["assets/games/quartz_1.jpg", "assets/games/quartz_2.jpg"],
     "players": "3–5",
     "time": "20–30 min",
     "age": "",
@@ -477,6 +511,7 @@ const games = [
   },
   {
     "title": "Saboteur",
+    "images": ["assets/games/saboteur_1.png", "assets/games/saboteur_2.jpg"],
     "players": "3–10",
     "time": "30 min",
     "age": "",
@@ -491,6 +526,7 @@ const games = [
   },
   {
     "title": "Sintonia",
+    "images": ["assets/games/sintonia_1.jpg", "assets/games/sintonia_2.jpg"],
     "players": "2–10+",
     "time": "20–40 min",
     "age": "",
@@ -505,6 +541,7 @@ const games = [
   },
   {
     "title": "Sóuma",
+    "images": ["assets/games/so_uma_1.jpg", "assets/games/so_uma_2.jpg"],
     "players": "3–7",
     "time": "20–30 min",
     "age": "",
@@ -519,6 +556,7 @@ const games = [
   },
   {
     "title": "Sonora",
+    "images": ["assets/games/sonora_1.png", "assets/games/sonora_2.jpg"],
     "players": "1–4",
     "time": "30–45 min",
     "age": "",
@@ -533,6 +571,7 @@ const games = [
   },
   {
     "title": "Spyfall 2",
+    "images": ["assets/games/spyfall_dois_1.png", "assets/games/spyfall_dois_2.jpg"],
     "players": "3–12",
     "time": "15 min",
     "age": "",
@@ -547,6 +586,7 @@ const games = [
   },
   {
     "title": "The Mind",
+    "images": ["assets/games/the_mind_1.jpg", "assets/games/the_mind_2.png"],
     "players": "2–4",
     "time": "20 min",
     "age": "8+",
@@ -561,6 +601,7 @@ const games = [
   },
   {
     "title": "Time's Up!",
+    "images": ["assets/games/times_up_1.jpg", "assets/games/times_up_2.jpg"],
     "players": "4–12+",
     "time": "30–60 min",
     "age": "",
@@ -575,6 +616,7 @@ const games = [
   },
   {
     "title": "Trial by Trolley",
+    "images": ["assets/games/trial_by_trolley_1.jpg"],
     "players": "3–13",
     "time": "30–90 min",
     "age": "",
@@ -589,6 +631,7 @@ const games = [
   },
   {
     "title": "Trio",
+    "images": ["assets/games/trio_1.jpg", "assets/games/trio_2.jpg"],
     "players": "3–6",
     "time": "15–30 min",
     "age": "",
@@ -603,6 +646,7 @@ const games = [
   },
   {
     "title": "Tuki",
+    "images": ["assets/games/tuki_1.jpg", "assets/games/tuki_2.jpg"],
     "players": "2–4",
     "time": "30–45 min",
     "age": "",
@@ -617,6 +661,7 @@ const games = [
   },
   {
     "title": "Turing Machine",
+    "images": ["assets/games/turing_machine_1.png", "assets/games/turing_machine_2.png"],
     "players": "1–4",
     "time": "20 min",
     "age": "",
@@ -631,6 +676,7 @@ const games = [
   },
   {
     "title": "Unicorn Fever",
+    "images": ["assets/games/unicorn_fever_1.jpg", "assets/games/unicorn_fever_2.jpg"],
     "players": "2–6",
     "time": "45–60 min",
     "age": "",
@@ -645,6 +691,7 @@ const games = [
   },
   {
     "title": "UNO Flex!",
+    "images": ["assets/games/uno_flex_1.png", "assets/games/uno_flex_2.png"],
     "players": "2–8",
     "time": "20–40 min",
     "age": "",
@@ -659,6 +706,7 @@ const games = [
   },
   {
     "title": "UNO Flip!",
+    "images": ["assets/games/uno_flip_1.jpg", "assets/games/uno_flip_2.jpg"],
     "players": "2–10",
     "time": "20–40 min",
     "age": "",
@@ -673,6 +721,7 @@ const games = [
   },
   {
     "title": "UNO Show 'em No Mercy",
+    "images": ["assets/games/uno_no_mercy_1.jpg", "assets/games/uno_no_mercy_2.jpg"],
     "players": "2–6",
     "time": "30–60 min",
     "age": "",
@@ -687,6 +736,7 @@ const games = [
   },
   {
     "title": "UNO Party!",
+    "images": ["assets/games/uno_party_1.jpg", "assets/games/uno_party_2.jpg"],
     "players": "6–16",
     "time": "30–60 min",
     "age": "",
@@ -701,6 +751,7 @@ const games = [
   },
   {
     "title": "Wandering Towers",
+    "images": ["assets/games/wandering_towers_1.jpg", "assets/games/wandering_towers_2.jpg"],
     "players": "2–6",
     "time": "30–45 min",
     "age": "",
@@ -715,6 +766,7 @@ const games = [
   },
   {
     "title": "Zombicide: 2nd Edition",
+    "images": ["assets/games/zombicide_second_1.jpg", "assets/games/zombicide_second_2.jpg"],
     "players": "1–6",
     "time": "60–180 min",
     "age": "",
@@ -768,8 +820,19 @@ const getPartyBucket = (value) => {
   return value;
 };
 
-const cardTemplate = (game) => `
+const cardTemplate = (game) => {
+  const [coverImage, secondaryImage] = game.images || [];
+
+  return `
   <article class="game-card">
+    ${
+      coverImage
+        ? `<figure class="card-media ${secondaryImage ? "has-secondary" : ""}">
+            <img class="cover primary-cover" src="${coverImage}" alt="Imagem do jogo ${game.title}" loading="lazy" />
+            ${secondaryImage ? `<img class="cover secondary-cover" src="${secondaryImage}" alt="Outra imagem do jogo ${game.title}" loading="lazy" />` : ""}
+          </figure>`
+        : ""
+    }
     <div class="card-top">
       <h3>${game.title}</h3>
       <span class="players" title="Jogadores">${game.players || "—"}</span>
@@ -800,6 +863,7 @@ const cardTemplate = (game) => `
     </section>
   </article>
 `;
+};
 
 const matchesFilters = (game) => {
   const query = normalize(searchInput.value.trim());
