@@ -362,7 +362,7 @@ const games = [
   {
     "title": "Nem a Pato",
     "images": ["assets/games/nem_a_pato_1.png", "assets/games/nem_a_pato_2.png"],
-    "players": "2–6",
+    "players": "2–10",
     "time": "15–25 min",
     "age": "",
     "style": "Cartas / estratégia leve / sabotagem",
@@ -370,7 +370,22 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Os jogadores baixam cartas para cumprir objetivos, aproveitar combinações e atrapalhar os adversários com efeitos especiais. A mão muda rápido, então é importante escolher se você pontua agora, prepara uma jogada melhor ou impede alguém que está perto de completar uma condição. O clima é leve, com pequenas sabotagens constantes.",
+    "how": "é um jogo de trivia e blefe: uma carta traz uma pergunta com resposta numérica, e cada jogador chuta um número sem saber a resposta certa, tentando ficar próximo sem exagerar. Os demais podem aumentar esse palpite ou duvidar dele gritando Nem a Pato!, revelando a carta, quem passou do valor real se dá mal na rodada.",
+    "feeling": "Rápido, brincalhão e um pouco caótico.",
+    "strength": "Tem bastante interação sem ficar pesado ou difícil de acompanhar."
+  },
+  {
+    "title": "Nem a Pato 2",
+    "images": ["assets/games/nem_a_pato_2_1.png", "assets/games/nem_a_pato_2_2.png"],
+    "players": "2–10",
+    "time": "15–25 min",
+    "age": "",
+    "style": "Cartas / estratégia leve / sabotagem",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Sim",
+    "complexity": "Fácil",
+    "how": "é um jogo de trivia e blefe: uma carta traz uma pergunta com resposta numérica, e cada jogador chuta um número sem saber a resposta certa, tentando ficar próximo sem exagerar. Os demais podem aumentar esse palpite ou duvidar dele gritando Nem a Pato!, revelando a carta, quem passou do valor real se dá mal na rodada.",
     "feeling": "Rápido, brincalhão e um pouco caótico.",
     "strength": "Tem bastante interação sem ficar pesado ou difícil de acompanhar."
   },
