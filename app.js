@@ -225,6 +225,21 @@ const games = [
     "strength": "Perfeito para festas porque vira conversa sobre músicas e lembranças."
   },
   {
+    "title": "Hitster Lado B",
+    "images": ["assets/games/hitster_lado_b_1.jpg", "assets/games/hitster_lado_b_2.jpg"],
+    "players": "2–10",
+    "time": "30 min",
+    "age": "",
+    "style": "Música / trivia",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Sim",
+    "complexity": "Fácil",
+    "how": "Uma música é tocada pelo aplicativo, e o jogador precisa colocá-la na posição correta da sua linha do tempo, antes ou depois das músicas que já acertou. Não é necessário saber o ano exato; basta comparar épocas, estilos e memórias musicais. Quem montar primeiro uma sequência suficiente de músicas vence.",
+    "feeling": "Nostalgia musical, cantoria espontânea e palpites confiantes que dão errado.",
+    "strength": "Perfeito para festas porque vira conversa sobre músicas e lembranças."
+  },
+  {
     "title": "ITO",
     "images": ["assets/games/ito_1.jpg", "assets/games/ito_2.png"],
     "players": "2–8",
