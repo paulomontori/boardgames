@@ -141,7 +141,7 @@ const games = [
     "time": "20–30 min",
     "age": "",
     "style": "Associação / dedução / cores",
-    "mode": "Competitivo em equipes ou individual",
+    "mode": "Competitivo",
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
@@ -771,7 +771,7 @@ const games = [
     "time": "30–90 min",
     "age": "",
     "style": "Debate / humor",
-    "mode": "Competitivo",
+    "mode": "Competitivo em equipes",
     "bluff": "Não",
     "party": "Muito",
     "complexity": "Fácil",
@@ -1003,8 +1003,8 @@ const highlightMatch = (value, query) => {
 
 const getModeBucket = (mode) => {
   const normalized = normalize(mode || "");
-  if (normalized.includes("cooperativo")) return "coop";
   if (normalized.includes("equipe")) return "team";
+  if (normalized.includes("cooperativo")) return "coop";
   return "competitive";
 };
 
