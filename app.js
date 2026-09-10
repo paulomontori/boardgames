@@ -1001,13 +1001,21 @@ const highlightMatch = (value, query) => {
   return `${escapeHtml(before)}<mark>${escapeHtml(match)}</mark>${escapeHtml(after)}`;
 };
 
-const getModeBucket = (mode) => (normalize(mode || "").includes("cooperativo") ? "coop" : "competitive");
+const getModeBucket = (mode) => {
+  const normalized = normalize(mode || "");
+  if (normalized.includes("cooperativo")) return "coop";
+  if (normalized.includes("equipe")) return "team";
+  return "competitive";
+};
+
+const MODE_ICONS = { coop: "🤝", team: "👥", competitive: "⚔️" };
+const MODE_LABELS = { coop: "Cooperativo", team: "Competitivo em equipes", competitive: "Competitivo" };
 
 const cardTemplate = (game, query) => {
   const [coverImage, secondaryImage] = game.images || [];
   const title = highlightMatch(game.title, query);
   const modeBucket = getModeBucket(game.mode);
-  const modeIcon = modeBucket === "coop" ? "🤝" : "⚔️";
+  const modeIcon = MODE_ICONS[modeBucket];
 
   return `
   <article class="game-card">
@@ -1021,7 +1029,7 @@ const cardTemplate = (game, query) => {
         : ""
     }
     <div class="card-top">
-      <h3><span class="mode-icon" title="${modeBucket === "coop" ? "Cooperativo" : "Competitivo"}" aria-hidden="true">${modeIcon}</span>${title}</h3>
+      <h3><span class="mode-icon" title="${MODE_LABELS[modeBucket]}" aria-hidden="true">${modeIcon}</span>${title}</h3>
       <span class="players" title="Jogadores">${highlightMatch(game.players || "—", query)}</span>
     </div>
     <div class="meta" aria-label="Metadados do jogo">
