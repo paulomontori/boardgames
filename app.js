@@ -1008,7 +1008,7 @@ const getModeBucket = (mode) => {
   return "competitive";
 };
 
-const MODE_ICONS = { coop: "🤝", team: "👥", competitive: "⚔️" };
+const MODE_ICONS = { coop: "🤝", team: "🎽", competitive: "⚔️" };
 const MODE_LABELS = { coop: "Cooperativo", team: "Competitivo em equipes", competitive: "Competitivo" };
 
 const cardTemplate = (game, query) => {
