@@ -4,14 +4,14 @@ GitHub Pages estático para consultar o acervo descrito em `Boardgames - Gian e 
 
 ## O que tem na página
 
-- Catálogo com 52 jogos extraídos do PDF original.
+- Catálogo com 62 jogos extraídos do PDF original e novas adições.
 - Busca por nome, estilo e descrição.
 - Filtros por modo de jogo, complexidade e perfil de party game.
 - Cards responsivos com jogadores, tempo, estilo, como funciona, sensação jogando e ponto forte.
 
 ## Publicação no GitHub Pages
 
-A branch criada para a página é `feature/pages`. Para publicar, configure o GitHub Pages do repositório para usar esta branch e a pasta raiz (`/`).
+A página é publicada direto da branch `main`, pasta raiz (`/`), via GitHub Pages.
 
 ## Desenvolvimento local
 

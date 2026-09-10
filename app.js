@@ -1,5 +1,35 @@
 const games = [
   {
+    "title": "Amigos de Merda",
+    "images": ["assets/games/amigos_de_merda_1.jpg", "assets/games/amigos_de_merda_2.jpg"],
+    "players": "3–21",
+    "time": "20–40 min",
+    "age": "18+",
+    "style": "Humor adulto / cartas",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Muito",
+    "complexity": "Fácil",
+    "how": "A cada rodada, uma carta traz uma categoria sobre defeitos ou manias, como “quem mais exagera nas histórias”. Todos apontam, em segredo, qual amigo do grupo mais combina com aquela descrição, e quem recebe mais votos fica com a carta. O primeiro a acumular cinco cartas é coroado o grande “amigo de merda” da rodada.",
+    "feeling": "Humor ácido e constrangedor, só recomendado pra quem já tem intimidade no grupo.",
+    "strength": "Expõe as manias de cada um de um jeito engraçado e gera piadas internas na hora."
+  },
+  {
+    "title": "Amigos de Merda 2",
+    "images": ["assets/games/amigos_de_merda_2_1.jpg", "assets/games/amigos_de_merda_2_2.jpg"],
+    "players": "3–21",
+    "time": "20–40 min",
+    "age": "18+",
+    "style": "Humor adulto / cartas",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Muito",
+    "complexity": "Fácil",
+    "how": "Mesma mecânica do original: uma categoria sobre defeitos ou manias é revelada, todos votam em segredo em quem do grupo mais combina com ela, e quem recebe mais votos fica com a carta. A diferença é o baralho, com 110 cartas inéditas, incluindo a expansão Sacana, que deixa as categorias ainda mais ousadas. Pode ser jogado sozinho ou misturado com o Amigos de Merda original.",
+    "feeling": "Mesmo clima ácido e constrangedor do original, só que com categorias ainda mais pesadas.",
+    "strength": "Dá sobrevida ao grupo que já esgotou as categorias do primeiro baralho."
+  },
+  {
     "title": "Bananagrams",
     "images": ["assets/games/bananagram_1.jpg", "assets/games/bananagram_2.jpg"],
     "players": "1–8",
@@ -16,7 +46,7 @@ const games = [
   },
   {
     "title": "Balde de Caranguejo",
-    "images": ["assets/games/balde_carangejo_1.png", "assets/games/balde_carangejo_2.png"],
+    "images": ["assets/games/balde_carangejo_1.jpg", "assets/games/balde_carangejo_2.jpg"],
     "players": "2–8",
     "time": "20–40 min",
     "age": "",
@@ -31,7 +61,7 @@ const games = [
   },
   {
     "title": "Bandido",
-    "images": ["assets/games/bandido_1.png", "assets/games/bandido_2.jpg"],
+    "images": ["assets/games/bandido_1.jpg", "assets/games/bandido_2.jpg"],
     "players": "1–4",
     "time": "10–20 min",
     "age": "",
@@ -75,8 +105,23 @@ const games = [
     "strength": "Partidas curtas, regras muito diretas e bastante energia na mesa."
   },
   {
+    "title": "Bomb Busters",
+    "images": ["assets/games/bomb_busters_1.jpg", "assets/games/bomb_busters_2.jpg"],
+    "players": "2–5",
+    "time": "30 min",
+    "age": "14+",
+    "style": "Cooperativo / dedução lógica",
+    "mode": "Cooperativo",
+    "bluff": "Não",
+    "party": "Não muito",
+    "complexity": "Fácil/Média",
+    "how": "O grupo forma um esquadrão antibombas: cada jogador organiza, em segredo, peças numeradas de 1 a 12 em ordem crescente no próprio suporte. No turno, você faz um “corte duplo”, apontando uma peça de outro jogador e arriscando um número, ou um “corte simples”, revelando peças de um número que o grupo já conhece. O time vence se cortar os fios certos antes de errar demais ou o tempo acabar.",
+    "feeling": "Tensão cooperativa de tentar passar informação sem poder falar abertamente.",
+    "strength": "Traz uma campanha com 66 missões e caixas surpresa que vão desbloqueando novas regras."
+  },
+  {
     "title": "Código Secreto: Imagens",
-    "images": ["assets/games/codigo_secreto_imagens_1.png", "assets/games/codigo_secreto_imagens_2.jpg"],
+    "images": ["assets/games/codigo_secreto_imagens_1.jpg", "assets/games/codigo_secreto_imagens_2.jpg"],
     "players": "2–8",
     "time": "15–30 min",
     "age": "",
@@ -91,7 +136,7 @@ const games = [
   },
   {
     "title": "Cores com Dicas",
-    "images": ["assets/games/cores_1.png", "assets/games/cores_2.png"],
+    "images": ["assets/games/cores_1.jpg", "assets/games/cores_2.jpg"],
     "players": "3–10",
     "time": "20–30 min",
     "age": "",
@@ -106,7 +151,7 @@ const games = [
   },
   {
     "title": "Coup",
-    "images": ["assets/games/coup_1.jpg", "assets/games/coup_2.png"],
+    "images": ["assets/games/coup_1.jpg", "assets/games/coup_2.jpg"],
     "players": "2–6",
     "time": "15 min",
     "age": "",
@@ -121,7 +166,7 @@ const games = [
   },
   {
     "title": "Dany",
-    "images": ["assets/games/dany_1.png", "assets/games/dany_2.jpg"],
+    "images": ["assets/games/dany_1.jpg", "assets/games/dany_2.jpg"],
     "players": "3–8",
     "time": "20–40 min",
     "age": "",
@@ -136,7 +181,7 @@ const games = [
   },
   {
     "title": "Decisões de Merda",
-    "images": ["assets/games/decisoes_de_merda_1.png", "assets/games/decisoes_de_merda_2.png"],
+    "images": ["assets/games/decisoes_de_merda_1.jpg", "assets/games/decisoes_de_merda_2.jpg"],
     "players": "3–10",
     "time": "20–40 min",
     "age": "",
@@ -151,7 +196,7 @@ const games = [
   },
   {
     "title": "Dixit",
-    "images": ["assets/games/dixit_1.jpg", "assets/games/dixit_2.png"],
+    "images": ["assets/games/dixit_1.jpg", "assets/games/dixit_2.jpg"],
     "players": "3–8",
     "time": "30 min",
     "age": "",
@@ -165,8 +210,38 @@ const games = [
     "strength": "As ilustrações puxam criatividade até de quem não costuma jogar muito."
   },
   {
+    "title": "Efeito Manada",
+    "images": ["assets/games/efeito_manada_1.jpg", "assets/games/efeito_manada_2.jpg"],
+    "players": "4–10",
+    "time": "30 min",
+    "age": "10+",
+    "style": "Associação / dedução de grupo",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Muito",
+    "complexity": "Fácil",
+    "how": "Uma carta com uma pergunta ou tema é lida em voz alta, e todos escrevem, em segredo, a primeira resposta que vier à cabeça. As respostas são reveladas ao mesmo tempo: quem pensou igual à maioria ganha uma ficha de vaca. Quem for o único a dar uma resposta diferente de todo mundo recebe a temida Vaca Rosa, que impede a vitória até ser repassada a outra pessoa em uma rodada futura. Vence quem juntar 8 fichas de vaca primeiro.",
+    "feeling": "Leve e revelador, mostra o quanto o grupo pensa parecido (ou não).",
+    "strength": "Explica em segundos e funciona muito bem com gente que não se conhece bem ainda."
+  },
+  {
+    "title": "É Top!? Geek & Pop",
+    "images": ["assets/games/e_top_1.jpg", "assets/games/e_top_2.jpg"],
+    "players": "2–10",
+    "time": "20 min",
+    "age": "12+",
+    "style": "Trivia / blefe / cultura pop",
+    "mode": "Competitivo",
+    "bluff": "Sim",
+    "party": "Sim",
+    "complexity": "Fácil",
+    "how": "A cada rodada, uma carta revela uma categoria de “Top 10” sobre filmes, séries, games ou cultura pop em geral. Os jogadores dão palpites de itens que acham que fazem parte da lista, e também podem contestar palpites dos outros que considerem errados. Você pontua tanto acertando respostas quanto derrubando o palpite errado de um adversário.",
+    "feeling": "Disputa animada de conhecimento geek, com bastante desafio e discussão entre os jogadores.",
+    "strength": "Funciona muito bem com grupos grandes e agrada quem curte cultura pop e nerd."
+  },
+  {
     "title": "Exploding Kittens",
-    "images": ["assets/games/exploding_kittens_1.jpg", "assets/games/exploding_kittens_1.png"],
+    "images": ["assets/games/exploding_kittens_1.jpg", "assets/games/exploding_kittens_2.jpg"],
     "players": "2–5",
     "time": "15 min",
     "age": "",
@@ -181,7 +256,7 @@ const games = [
   },
   {
     "title": "F.D.P.",
-    "images": ["assets/games/fpd_1.png", "assets/games/fpd_2.png"],
+    "images": ["assets/games/fpd_1.jpg", "assets/games/fpd_2.jpg"],
     "players": "4–10+",
     "time": "30–60 min",
     "age": "",
@@ -193,6 +268,21 @@ const games = [
     "how": "Um jogador lê uma pergunta ou frase incompleta. Os demais escolhem, em segredo, a carta de resposta mais absurda, ofensiva ou engraçada que tiverem na mão. O leitor embaralha as respostas, lê todas em voz alta e escolhe a favorita; quem enviou a carta escolhida marca ponto.",
     "feeling": "Zoeira pesada, politicamente incorreta e dependente do senso de humor do grupo.",
     "strength": "É fácil de começar e rende muitas risadas com pessoas que gostam de humor sem filtro."
+  },
+  {
+    "title": "Flip 7",
+    "images": ["assets/games/flip7_1.jpg", "assets/games/flip7_2.jpg"],
+    "players": "3–18",
+    "time": "20–40 min",
+    "age": "8+",
+    "style": "Cartas / push your luck",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Sim",
+    "complexity": "Fácil",
+    "how": "No seu turno, você compra e revela cartas do baralho uma a uma, tentando não repetir nenhum número. Se tirar um número que já apareceu na sua sequência, você “estoura” e não pontua nada na rodada. Se conseguir revelar 7 números diferentes, a rodada acaba na hora e você ganha 15 pontos de bônus. Cartas especiais como Segunda Chance, Congela e Vire Três aumentam o risco e a imprevisibilidade. Vence quem chegar a 200 pontos primeiro.",
+    "feeling": "Tensão crescente de “só mais uma carta” a cada rodada, com direito a estouros dramáticos.",
+    "strength": "Regras rápidas de explicar e partidas curtas que pedem revanche na hora."
   },
   {
     "title": "Hanabi",
@@ -211,7 +301,7 @@ const games = [
   },
   {
     "title": "Hitster",
-    "images": ["assets/games/hitster_1.png", "assets/games/hitster_2.jpg"],
+    "images": ["assets/games/hitster_1.jpg", "assets/games/hitster_2.jpg"],
     "players": "2–10",
     "time": "30 min",
     "age": "",
@@ -222,7 +312,7 @@ const games = [
     "complexity": "Fácil",
     "how": "Uma música é tocada pelo aplicativo, e o jogador precisa colocá-la na posição correta da sua linha do tempo, antes ou depois das músicas que já acertou. Não é necessário saber o ano exato; basta comparar épocas, estilos e memórias musicais. Quem montar primeiro uma sequência suficiente de músicas vence.",
     "feeling": "Nostalgia musical, cantoria espontânea e palpites confiantes que dão errado.",
-    "strength": "Perfeito para festas porque vira conversa sobre músicas e lembranças."
+    "strength": "Perfeito para festas porque vira conversa sobre músicas e lembranças. Baralho com hits bem conhecidos de várias décadas."
   },
   {
     "title": "Hitster Lado B",
@@ -235,13 +325,13 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Uma música é tocada pelo aplicativo, e o jogador precisa colocá-la na posição correta da sua linha do tempo, antes ou depois das músicas que já acertou. Não é necessário saber o ano exato; basta comparar épocas, estilos e memórias musicais. Quem montar primeiro uma sequência suficiente de músicas vence.",
-    "feeling": "Nostalgia musical, cantoria espontânea e palpites confiantes que dão errado.",
-    "strength": "Perfeito para festas porque vira conversa sobre músicas e lembranças."
+    "how": "Mesma mecânica do Hitster original: uma música toca pelo aplicativo e o jogador precisa encaixá-la na posição correta da sua linha do tempo. A diferença é o baralho, com mais de 300 cartas novas de \"lado B\" — sucessos menos óbvios e guilty pleasures das últimas décadas, em vez dos hits mais famosos. Pode ser jogado sozinho ou misturado com o baralho do Hitster original.",
+    "feeling": "Nostalgia musical mais nichada, com descobertas de faixas que todo mundo conhece mas ninguém assume gostar.",
+    "strength": "Renova o jogo pra quem já decorou as cartas do Hitster original."
   },
   {
     "title": "ITO",
-    "images": ["assets/games/ito_1.jpg", "assets/games/ito_2.png"],
+    "images": ["assets/games/ito_1.jpg", "assets/games/ito_2.jpg"],
     "players": "2–8",
     "time": "20–30 min",
     "age": "",
@@ -271,7 +361,7 @@ const games = [
   },
   {
     "title": "Kariba",
-    "images": ["assets/games/kariba_1.jpg", "assets/games/kariba_2.png"],
+    "images": ["assets/games/kariba_1.jpg", "assets/games/kariba_2.jpg"],
     "players": "2–4",
     "time": "15–20 min",
     "age": "",
@@ -286,7 +376,7 @@ const games = [
   },
   {
     "title": "Kingdomino",
-    "images": ["assets/games/king_domino_1.jpg", "assets/games/king_domino_2.png"],
+    "images": ["assets/games/king_domino_1.jpg", "assets/games/king_domino_2.jpg"],
     "players": "2–4",
     "time": "15–25 min",
     "age": "",
@@ -301,7 +391,7 @@ const games = [
   },
   {
     "title": "Love Letter",
-    "images": ["assets/games/love_letter_1.png", "assets/games/love_letter_2.png"],
+    "images": ["assets/games/love_letter_1.jpg", "assets/games/love_letter_2.jpg"],
     "players": "2–6",
     "time": "20 min",
     "age": "",
@@ -316,7 +406,7 @@ const games = [
   },
   {
     "title": "Magic Maze",
-    "images": ["assets/games/magic_maze_1.jpg", "assets/games/magic_maze_2.png"],
+    "images": ["assets/games/magic_maze_1.jpg", "assets/games/magic_maze_2.jpg"],
     "players": "1–8",
     "time": "15 min",
     "age": "",
@@ -331,7 +421,7 @@ const games = [
   },
   {
     "title": "Misty",
-    "images": ["assets/games/misty_1.jpg", "assets/games/misty_2.png"],
+    "images": ["assets/games/misty_1.jpg", "assets/games/misty_2.jpg"],
     "players": "2–4",
     "time": "15–30 min",
     "age": "",
@@ -376,7 +466,7 @@ const games = [
   },
   {
     "title": "Nem a Pato",
-    "images": ["assets/games/nem_a_pato_1.png", "assets/games/nem_a_pato_2.png"],
+    "images": ["assets/games/nem_a_pato_1.jpg", "assets/games/nem_a_pato_2.jpg"],
     "players": "2–10",
     "time": "15–25 min",
     "age": "",
@@ -391,7 +481,7 @@ const games = [
   },
   {
     "title": "Nem a Pato 2",
-    "images": ["assets/games/nem_a_pato_2_1.png", "assets/games/nem_a_pato_2_2.png"],
+    "images": ["assets/games/nem_a_pato_2_1.jpg", "assets/games/nem_a_pato_2_2.jpg"],
     "players": "2–10",
     "time": "15–25 min",
     "age": "",
@@ -400,9 +490,24 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "é um jogo de trivia e blefe: uma carta traz uma pergunta com resposta numérica, e cada jogador chuta um número sem saber a resposta certa, tentando ficar próximo sem exagerar. Os demais podem aumentar esse palpite ou duvidar dele gritando Nem a Pato!, revelando a carta, quem passou do valor real se dá mal na rodada.",
-    "feeling": "Rápido, brincalhão e um pouco caótico.",
-    "strength": "Tem bastante interação sem ficar pesado ou difícil de acompanhar."
+    "how": "Mesma mecânica do Nem a Pato original: uma pergunta com resposta numérica, e cada jogador chuta um número tentando ficar próximo sem exagerar, podendo ser desafiado com um grito de Nem a Pato!. A diferença é o baralho: mais de 100 perguntas novas, que também podem ser misturadas com as do jogo original para partidas mais longas e variadas.",
+    "feeling": "Mesmo caos rápido e brincalhão do original, com perguntas novas para quem já decorou as respostas do primeiro baralho.",
+    "strength": "Dá sobrevida ao grupo que já zerou as perguntas do Nem a Pato original."
+  },
+  {
+    "title": "Nevasca",
+    "images": ["assets/games/nevasca_1.jpg", "assets/games/nevasca_2.jpg"],
+    "players": "2–5",
+    "time": "30 min",
+    "age": "14+",
+    "style": "Cartas / sobrevivência / gestão de recursos",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Não muito",
+    "complexity": "Média",
+    "how": "Cada jogador cuida da própria cabana em meio a um inverno implacável, reunindo comida, recrutando aliados e se preparando para o frio, enquanto também decide quando atacar os adversários para roubar recursos essenciais. O jogo mistura gestão de cartas, dados e interação direta; nem sempre dá pra só se defender, às vezes é preciso arriscar um ataque para sobreviver. Vence quem acumular 6 cartas de Comida primeiro.",
+    "feeling": "Tensão de sobrevivência, com decisões de quando crescer, se proteger ou atacar o vizinho.",
+    "strength": "Jogo brasileiro que combina tema gelado forte com bastante interação direta entre os jogadores."
   },
   {
     "title": "Nova Luna",
@@ -436,7 +541,7 @@ const games = [
   },
   {
     "title": "Pandemic",
-    "images": ["assets/games/pandemic_1.png", "assets/games/pandemic_2.jpg"],
+    "images": ["assets/games/pandemic_1.jpg", "assets/games/pandemic_2.jpg"],
     "players": "2–4",
     "time": "45–60 min",
     "age": "",
@@ -451,7 +556,7 @@ const games = [
   },
   {
     "title": "Parade",
-    "images": ["assets/games/parade_1.png", "assets/games/parade_2.jpg"],
+    "images": ["assets/games/parade_1.jpg", "assets/games/parade_2.jpg"],
     "players": "2–6",
     "time": "20–30 min",
     "age": "",
@@ -481,7 +586,7 @@ const games = [
   },
   {
     "title": "Piratas!",
-    "images": ["assets/games/piratas_1.jpg", "assets/games/piratas_2.png"],
+    "images": ["assets/games/piratas_1.jpg", "assets/games/piratas_2.jpg"],
     "players": "2–6",
     "time": "20–40 min",
     "age": "",
@@ -511,7 +616,7 @@ const games = [
   },
   {
     "title": "Project L",
-    "images": ["assets/games/project_l_1.png", "assets/games/project_l_2.jpg"],
+    "images": ["assets/games/project_l_1.jpg", "assets/games/project_l_2.jpg"],
     "players": "1–6",
     "time": "20–40 min",
     "age": "",
@@ -541,7 +646,7 @@ const games = [
   },
   {
     "title": "Saboteur",
-    "images": ["assets/games/saboteur_1.png", "assets/games/saboteur_2.jpg"],
+    "images": ["assets/games/saboteur_1.jpg", "assets/games/saboteur_2.jpg"],
     "players": "3–10",
     "time": "30 min",
     "age": "",
@@ -586,7 +691,7 @@ const games = [
   },
   {
     "title": "Sonora",
-    "images": ["assets/games/sonora_1.png", "assets/games/sonora_2.jpg"],
+    "images": ["assets/games/sonora_1.jpg", "assets/games/sonora_2.jpg"],
     "players": "1–4",
     "time": "30–45 min",
     "age": "",
@@ -601,7 +706,7 @@ const games = [
   },
   {
     "title": "Spyfall 2",
-    "images": ["assets/games/spyfall_dois_1.png", "assets/games/spyfall_dois_2.jpg"],
+    "images": ["assets/games/spyfall_dois_1.jpg", "assets/games/spyfall_dois_2.jpg"],
     "players": "3–12",
     "time": "15 min",
     "age": "",
@@ -615,8 +720,23 @@ const games = [
     "strength": "Brilha com grupos falantes que gostam de improvisar e blefar."
   },
   {
+    "title": "Sushi Go!",
+    "images": ["assets/games/sushi_go_1.jpg", "assets/games/sushi_go_2.jpg"],
+    "players": "2–5",
+    "time": "15 min",
+    "age": "8+",
+    "style": "Cartas / draft / coleção",
+    "mode": "Competitivo",
+    "bluff": "Não",
+    "party": "Parcialmente",
+    "complexity": "Fácil",
+    "how": "Cada jogador recebe uma mão de cartas de sushi, escolhe uma em segredo e todos revelam ao mesmo tempo; o resto da mão passa para quem está ao lado. A ideia é montar as melhores combinações de pratos, como sashimis, tempurás, makis e nigiris, ao longo de três rodadas. No fim, cartas de pudim ainda rendem pontos extras que podem decidir a partida.",
+    "feeling": "Rápido, colorido e satisfatório quando uma sequência de sushis encaixa direitinho.",
+    "strength": "Explica em minutos, cabe em qualquer bolso e agrada muito bem famílias e iniciantes."
+  },
+  {
     "title": "The Mind",
-    "images": ["assets/games/the_mind_1.jpg", "assets/games/the_mind_2.png"],
+    "images": ["assets/games/the_mind_1.jpg", "assets/games/the_mind_2.jpg"],
     "players": "2–4",
     "time": "20 min",
     "age": "8+",
@@ -691,7 +811,7 @@ const games = [
   },
   {
     "title": "Turing Machine",
-    "images": ["assets/games/turing_machine_1.png", "assets/games/turing_machine_2.png"],
+    "images": ["assets/games/turing_machine_1.jpg", "assets/games/turing_machine_2.jpg"],
     "players": "1–4",
     "time": "20 min",
     "age": "",
@@ -721,7 +841,7 @@ const games = [
   },
   {
     "title": "UNO Flex!",
-    "images": ["assets/games/uno_flex_1.png", "assets/games/uno_flex_2.png"],
+    "images": ["assets/games/uno_flex_1.jpg", "assets/games/uno_flex_2.jpg"],
     "players": "2–8",
     "time": "20–40 min",
     "age": "",
@@ -850,46 +970,56 @@ const getPartyBucket = (value) => {
   return value;
 };
 
+const escapeHtml = (value) =>
+  value
+    .toString()
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 const cardTemplate = (game) => {
   const [coverImage, secondaryImage] = game.images || [];
+  const title = escapeHtml(game.title);
 
   return `
   <article class="game-card">
     ${
       coverImage
         ? `<figure class="card-media ${secondaryImage ? "has-secondary" : ""}">
-            <img class="cover primary-cover" src="${coverImage}" alt="Imagem do jogo ${game.title}" loading="lazy" />
-            ${secondaryImage ? `<img class="cover secondary-cover" src="${secondaryImage}" alt="Outra imagem do jogo ${game.title}" loading="lazy" />` : ""}
+            <img class="cover primary-cover" src="${escapeHtml(coverImage)}" alt="Imagem do jogo ${title}" loading="lazy" onerror="this.closest('figure').classList.add('media-broken')" />
+            ${secondaryImage ? `<img class="cover secondary-cover" src="${escapeHtml(secondaryImage)}" alt="Outra imagem do jogo ${title}" loading="lazy" onerror="this.remove()" />` : ""}
           </figure>`
         : ""
     }
     <div class="card-top">
-      <h3>${game.title}</h3>
-      <span class="players" title="Jogadores">${game.players || "—"}</span>
+      <h3>${title}</h3>
+      <span class="players" title="Jogadores">${escapeHtml(game.players || "—")}</span>
     </div>
     <div class="meta" aria-label="Metadados do jogo">
-      ${game.time ? `<span class="tag">⏱ ${game.time}</span>` : ""}
-      ${game.age ? `<span class="tag">👶 ${game.age}</span>` : ""}
-      ${game.complexity ? `<span class="tag accent">${game.complexity}</span>` : ""}
-      ${game.mode ? `<span class="tag">${game.mode}</span>` : ""}
-      ${game.party ? `<span class="tag">Party: ${game.party}</span>` : ""}
-      ${game.bluff ? `<span class="tag">Bluff: ${game.bluff}</span>` : ""}
+      ${game.time ? `<span class="tag">⏱ ${escapeHtml(game.time)}</span>` : ""}
+      ${game.age ? `<span class="tag">👶 ${escapeHtml(game.age)}</span>` : ""}
+      ${game.complexity ? `<span class="tag accent">${escapeHtml(game.complexity)}</span>` : ""}
+      ${game.mode ? `<span class="tag">${escapeHtml(game.mode)}</span>` : ""}
+      ${game.party ? `<span class="tag">Party: ${escapeHtml(game.party)}</span>` : ""}
+      ${game.bluff ? `<span class="tag">Bluff: ${escapeHtml(game.bluff)}</span>` : ""}
     </div>
     <section>
       <h4>Estilo</h4>
-      <p>${game.style || "Não informado."}</p>
+      <p>${escapeHtml(game.style || "Não informado.")}</p>
     </section>
     <section>
       <h4>Como funciona</h4>
-      <p>${game.how || "Descrição não informada."}</p>
+      <p>${escapeHtml(game.how || "Descrição não informada.")}</p>
     </section>
     <section>
       <h4>Sensação</h4>
-      <p>${game.feeling || "Não informada."}</p>
+      <p>${escapeHtml(game.feeling || "Não informada.")}</p>
     </section>
     <section>
       <h4>Ponto forte</h4>
-      <p>${game.strength || "Não informado."}</p>
+      <p>${escapeHtml(game.strength || "Não informado.")}</p>
     </section>
   </article>
 `;
