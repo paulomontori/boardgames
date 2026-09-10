@@ -325,7 +325,7 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "Mesma mecânica do Hitster original: uma música toca pelo aplicativo e o jogador precisa encaixá-la na posição correta da sua linha do tempo. A diferença é o baralho, com mais de 300 cartas novas de \"lado B\" — sucessos menos óbvios e guilty pleasures das últimas décadas, em vez dos hits mais famosos. Pode ser jogado sozinho ou misturado com o baralho do Hitster original.",
+    "how": "Mesma mecânica do Hitster original: uma música toca pelo aplicativo e o jogador precisa encaixá-la na posição correta da sua linha do tempo. A diferença é o baralho, com mais de 300 cartas novas de “lado B” — sucessos menos óbvios e guilty pleasures das últimas décadas, em vez dos hits mais famosos. Pode ser jogado sozinho ou misturado com o baralho do Hitster original.",
     "feeling": "Nostalgia musical mais nichada, com descobertas de faixas que todo mundo conhece mas ninguém assume gostar.",
     "strength": "Renova o jogo pra quem já decorou as cartas do Hitster original."
   },
@@ -475,7 +475,7 @@ const games = [
     "bluff": "Não",
     "party": "Sim",
     "complexity": "Fácil",
-    "how": "é um jogo de trivia e blefe: uma carta traz uma pergunta com resposta numérica, e cada jogador chuta um número sem saber a resposta certa, tentando ficar próximo sem exagerar. Os demais podem aumentar esse palpite ou duvidar dele gritando Nem a Pato!, revelando a carta, quem passou do valor real se dá mal na rodada.",
+    "how": "É um jogo de trivia e blefe: uma carta traz uma pergunta com resposta numérica, e cada jogador chuta um número sem saber a resposta certa, tentando ficar próximo sem exagerar. Os demais podem aumentar esse palpite ou duvidar dele gritando Nem a Pato!, revelando a carta — quem passou do valor real se dá mal na rodada.",
     "feeling": "Rápido, brincalhão e um pouco caótico.",
     "strength": "Tem bastante interação sem ficar pesado ou difícil de acompanhar."
   },
@@ -987,9 +987,10 @@ const cardTemplate = (game) => {
   <article class="game-card">
     ${
       coverImage
-        ? `<figure class="card-media ${secondaryImage ? "has-secondary" : ""}">
+        ? `<figure class="card-media ${secondaryImage ? "has-secondary" : ""}" ${secondaryImage ? 'role="button" tabindex="0" aria-label="Mostrar outra imagem"' : ""}>
             <img class="cover primary-cover" src="${escapeHtml(coverImage)}" alt="Imagem do jogo ${title}" loading="lazy" onerror="this.closest('figure').classList.add('media-broken')" />
             ${secondaryImage ? `<img class="cover secondary-cover" src="${escapeHtml(secondaryImage)}" alt="Outra imagem do jogo ${title}" loading="lazy" onerror="this.remove()" />` : ""}
+            ${secondaryImage ? `<span class="media-dots" aria-hidden="true"><span class="dot active"></span><span class="dot"></span></span>` : ""}
           </figure>`
         : ""
     }
@@ -1066,6 +1067,27 @@ clearButton.addEventListener("click", () => {
   partyFilter.value = "";
   renderGames();
   searchInput.focus();
+});
+
+const toggleCardMedia = (figure) => {
+  if (!figure || !figure.classList.contains("has-secondary")) return;
+  figure.classList.toggle("show-secondary");
+  const dots = figure.querySelectorAll(".dot");
+  dots.forEach((dot, index) =>
+    dot.classList.toggle("active", figure.classList.contains("show-secondary") ? index === 1 : index === 0),
+  );
+};
+
+gamesGrid.addEventListener("click", (event) => {
+  toggleCardMedia(event.target.closest(".card-media"));
+});
+
+gamesGrid.addEventListener("keydown", (event) => {
+  if (event.key !== "Enter" && event.key !== " ") return;
+  const figure = event.target.closest(".card-media");
+  if (!figure) return;
+  event.preventDefault();
+  toggleCardMedia(figure);
 });
 
 renderGames();
