@@ -1010,7 +1010,7 @@ const cardTemplate = (game, query) => {
   const modeIcon = modeBucket === "coop" ? "🤝" : "⚔️";
 
   return `
-  <article class="game-card mode-${modeBucket}">
+  <article class="game-card">
     ${
       coverImage
         ? `<figure class="card-media ${secondaryImage ? "has-secondary" : ""}" ${secondaryImage ? 'role="button" tabindex="0" aria-label="Mostrar outra imagem"' : ""}>
