@@ -66,6 +66,28 @@ a { color: inherit; }
   pointer-events: none;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  height: 45%;
+  background: linear-gradient(180deg, transparent, rgba(0, 245, 255, 0.16), transparent);
+  animation: scanline 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0%,
+  100% { transform: translateY(-60%); opacity: 0; }
+  15% { opacity: 1; }
+  50% { transform: translateY(120%); opacity: 1; }
+  85% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; display: none; }
+}
+
 .topbar,
 main,
 footer { max-width: 1180px; margin-inline: auto; }
@@ -76,6 +98,8 @@ footer { max-width: 1180px; margin-inline: auto; }
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: clamp(3rem, 9vw, 7rem);
+  position: relative;
+  z-index: 1;
 }
 
 .brand,
@@ -223,6 +247,24 @@ input::placeholder { color: rgba(169, 180, 208, 0.72); }
 }
 
 .results-header h2 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); }
+
+.results-progress {
+  height: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(4, 6, 14, 0.9);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+}
+
+.results-progress-bar {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.55), 0 0 12px rgba(255, 43, 214, 0.4);
+  transition: width 260ms ease;
+}
 
 .games-grid {
   display: grid;
@@ -377,10 +419,34 @@ mark {
   padding: 0.45rem 0.6rem;
 }
 
-.tag.accent {
-  border-color: var(--line-hot);
-  color: var(--accent);
-  text-shadow: var(--glow-pink);
+.tag.complexity-facil {
+  border-color: rgba(184, 255, 44, 0.45);
+  color: var(--acid);
+  text-shadow: 0 0 10px rgba(184, 255, 44, 0.5);
+}
+
+.tag.complexity-facil-media {
+  border-color: rgba(217, 232, 58, 0.45);
+  color: #d9e83a;
+  text-shadow: 0 0 10px rgba(217, 232, 58, 0.5);
+}
+
+.tag.complexity-media {
+  border-color: rgba(255, 176, 32, 0.45);
+  color: #ffb020;
+  text-shadow: 0 0 10px rgba(255, 176, 32, 0.5);
+}
+
+.tag.complexity-media-alta {
+  border-color: rgba(255, 122, 61, 0.45);
+  color: #ff7a3d;
+  text-shadow: 0 0 10px rgba(255, 122, 61, 0.5);
+}
+
+.tag.complexity-alta {
+  border-color: rgba(255, 56, 96, 0.45);
+  color: #ff3860;
+  text-shadow: 0 0 10px rgba(255, 56, 96, 0.5);
 }
 
 .game-card p { color: var(--muted); line-height: 1.55; }

@@ -939,6 +939,7 @@ const clearButton = document.querySelector("#clear-filters");
 const gamesGrid = document.querySelector("#games");
 const resultCount = document.querySelector("#result-count");
 const emptyState = document.querySelector("#empty-state");
+const resultsProgressBar = document.querySelector("#results-progress-bar");
 
 const normalize = (value) =>
   value
@@ -969,6 +970,12 @@ const getPartyBucket = (value) => {
   if (value.startsWith("Sim")) return "Sim";
   return value;
 };
+
+const slugify = (value) =>
+  normalize(value)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 const escapeHtml = (value) =>
   value
@@ -1020,7 +1027,7 @@ const cardTemplate = (game, query) => {
     <div class="meta" aria-label="Metadados do jogo">
       ${game.time ? `<span class="tag">⏱ ${highlightMatch(game.time, query)}</span>` : ""}
       ${game.age ? `<span class="tag">👶 ${highlightMatch(game.age, query)}</span>` : ""}
-      ${game.complexity ? `<span class="tag accent">${highlightMatch(game.complexity, query)}</span>` : ""}
+      ${game.complexity ? `<span class="tag complexity-${slugify(game.complexity)}">${highlightMatch(game.complexity, query)}</span>` : ""}
       ${game.mode ? `<span class="tag">${highlightMatch(game.mode, query)}</span>` : ""}
       ${game.party ? `<span class="tag">Party: ${highlightMatch(game.party, query)}</span>` : ""}
       ${game.bluff ? `<span class="tag">Bluff: ${highlightMatch(game.bluff, query)}</span>` : ""}
@@ -1063,6 +1070,7 @@ const renderGames = () => {
   gamesGrid.innerHTML = filteredGames.map((game) => cardTemplate(game, query)).join("");
   resultCount.textContent = filteredGames.length;
   emptyState.hidden = filteredGames.length > 0;
+  resultsProgressBar.style.width = `${(filteredGames.length / games.length) * 100}%`;
 };
 
 fillSelect(modeFilter, uniqueValues("mode"));
