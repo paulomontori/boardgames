@@ -1008,7 +1008,11 @@ const getModeBucket = (mode) => {
   return "competitive";
 };
 
-const MODE_ICONS = { coop: "🤝", team: "🎽", competitive: "⚔️" };
+const MODE_ICONS = {
+  coop: "assets/modes/cooperativo.png",
+  team: "assets/modes/times.png",
+  competitive: "assets/modes/competitivo.png",
+};
 const MODE_LABELS = { coop: "Cooperativo", team: "Competitivo em equipes", competitive: "Competitivo" };
 
 const cardTemplate = (game, query) => {
@@ -1029,7 +1033,7 @@ const cardTemplate = (game, query) => {
         : ""
     }
     <div class="card-top">
-      <h3><span class="mode-icon" title="${MODE_LABELS[modeBucket]}" aria-hidden="true">${modeIcon}</span>${title}</h3>
+      <h3><img class="mode-icon" src="${modeIcon}" alt="" title="${MODE_LABELS[modeBucket]}" />${title}</h3>
       <span class="players" title="Jogadores">${highlightMatch(game.players || "—", query)}</span>
     </div>
     <div class="meta" aria-label="Metadados do jogo">
