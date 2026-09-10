@@ -79,7 +79,6 @@ footer { max-width: 1180px; margin-inline: auto; }
 }
 
 .brand,
-.pdf-link,
 button {
   border-radius: 999px;
   font-weight: 800;
@@ -93,23 +92,18 @@ button {
   text-shadow: var(--glow-cyan);
 }
 
-.pdf-link,
 button {
   border: 1px solid var(--line);
   background: linear-gradient(135deg, rgba(0, 245, 255, 0.12), rgba(255, 43, 214, 0.1));
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset, var(--glow-cyan);
   color: var(--ink);
   padding: 0.75rem 1rem;
-}
-
-button {
   cursor: pointer;
   color: var(--primary);
   transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
-button:hover,
-.pdf-link:hover {
+button:hover {
   border-color: var(--line-hot);
   color: var(--accent);
   transform: translateY(-1px);
@@ -391,10 +385,8 @@ footer {
 
   .control-grid label:first-child { grid-column: 1 / -1; }
 
-  .topbar,
   .results-header { align-items: stretch; flex-direction: column; }
 
-  .pdf-link,
   button { text-align: center; }
 }
 
