@@ -979,48 +979,67 @@ const escapeHtml = (value) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
-const cardTemplate = (game) => {
+const highlightMatch = (value, query) => {
+  const text = (value || "").toString();
+  if (!query) return escapeHtml(text);
+
+  const normalizedText = normalize(text);
+  const normalizedQuery = normalize(query);
+  const index = normalizedText.indexOf(normalizedQuery);
+  if (index === -1) return escapeHtml(text);
+
+  const before = text.slice(0, index);
+  const match = text.slice(index, index + query.length);
+  const after = text.slice(index + query.length);
+  return `${escapeHtml(before)}<mark>${escapeHtml(match)}</mark>${escapeHtml(after)}`;
+};
+
+const getModeBucket = (mode) => (normalize(mode || "").includes("cooperativo") ? "coop" : "competitive");
+
+const cardTemplate = (game, query) => {
   const [coverImage, secondaryImage] = game.images || [];
-  const title = escapeHtml(game.title);
+  const title = highlightMatch(game.title, query);
+  const modeBucket = getModeBucket(game.mode);
+  const modeIcon = modeBucket === "coop" ? "🤝" : "⚔️";
 
   return `
-  <article class="game-card">
+  <article class="game-card mode-${modeBucket}">
     ${
       coverImage
         ? `<figure class="card-media ${secondaryImage ? "has-secondary" : ""}" ${secondaryImage ? 'role="button" tabindex="0" aria-label="Mostrar outra imagem"' : ""}>
-            <img class="cover primary-cover" src="${escapeHtml(coverImage)}" alt="Imagem do jogo ${title}" loading="lazy" onerror="this.closest('figure').classList.add('media-broken')" />
-            ${secondaryImage ? `<img class="cover secondary-cover" src="${escapeHtml(secondaryImage)}" alt="Outra imagem do jogo ${title}" loading="lazy" onerror="this.remove()" />` : ""}
+            <img class="cover primary-cover" src="${escapeHtml(coverImage)}" alt="Imagem do jogo ${escapeHtml(game.title)}" loading="lazy" onerror="this.closest('figure').classList.add('media-broken')" />
+            ${secondaryImage ? `<img class="cover secondary-cover" src="${escapeHtml(secondaryImage)}" alt="Outra imagem do jogo ${escapeHtml(game.title)}" loading="lazy" onerror="this.remove()" />` : ""}
             ${secondaryImage ? `<span class="media-dots" aria-hidden="true"><span class="dot active"></span><span class="dot"></span></span>` : ""}
           </figure>`
         : ""
     }
     <div class="card-top">
-      <h3>${title}</h3>
-      <span class="players" title="Jogadores">${escapeHtml(game.players || "—")}</span>
+      <h3><span class="mode-icon" title="${modeBucket === "coop" ? "Cooperativo" : "Competitivo"}" aria-hidden="true">${modeIcon}</span>${title}</h3>
+      <span class="players" title="Jogadores">${highlightMatch(game.players || "—", query)}</span>
     </div>
     <div class="meta" aria-label="Metadados do jogo">
-      ${game.time ? `<span class="tag">⏱ ${escapeHtml(game.time)}</span>` : ""}
-      ${game.age ? `<span class="tag">👶 ${escapeHtml(game.age)}</span>` : ""}
-      ${game.complexity ? `<span class="tag accent">${escapeHtml(game.complexity)}</span>` : ""}
-      ${game.mode ? `<span class="tag">${escapeHtml(game.mode)}</span>` : ""}
-      ${game.party ? `<span class="tag">Party: ${escapeHtml(game.party)}</span>` : ""}
-      ${game.bluff ? `<span class="tag">Bluff: ${escapeHtml(game.bluff)}</span>` : ""}
+      ${game.time ? `<span class="tag">⏱ ${highlightMatch(game.time, query)}</span>` : ""}
+      ${game.age ? `<span class="tag">👶 ${highlightMatch(game.age, query)}</span>` : ""}
+      ${game.complexity ? `<span class="tag accent">${highlightMatch(game.complexity, query)}</span>` : ""}
+      ${game.mode ? `<span class="tag">${highlightMatch(game.mode, query)}</span>` : ""}
+      ${game.party ? `<span class="tag">Party: ${highlightMatch(game.party, query)}</span>` : ""}
+      ${game.bluff ? `<span class="tag">Bluff: ${highlightMatch(game.bluff, query)}</span>` : ""}
     </div>
     <section>
       <h4>Estilo</h4>
-      <p>${escapeHtml(game.style || "Não informado.")}</p>
+      <p>${highlightMatch(game.style || "Não informado.", query)}</p>
     </section>
     <section>
       <h4>Como funciona</h4>
-      <p>${escapeHtml(game.how || "Descrição não informada.")}</p>
+      <p>${highlightMatch(game.how || "Descrição não informada.", query)}</p>
     </section>
     <section>
       <h4>Sensação</h4>
-      <p>${escapeHtml(game.feeling || "Não informada.")}</p>
+      <p>${highlightMatch(game.feeling || "Não informada.", query)}</p>
     </section>
     <section>
       <h4>Ponto forte</h4>
-      <p>${escapeHtml(game.strength || "Não informado.")}</p>
+      <p>${highlightMatch(game.strength || "Não informado.", query)}</p>
     </section>
   </article>
 `;
@@ -1039,8 +1058,9 @@ const matchesFilters = (game) => {
 };
 
 const renderGames = () => {
+  const query = searchInput.value.trim();
   const filteredGames = games.filter(matchesFilters);
-  gamesGrid.innerHTML = filteredGames.map(cardTemplate).join("");
+  gamesGrid.innerHTML = filteredGames.map((game) => cardTemplate(game, query)).join("");
   resultCount.textContent = filteredGames.length;
   emptyState.hidden = filteredGames.length > 0;
 };
